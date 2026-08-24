@@ -7,11 +7,16 @@
   ### AI-Powered Smart Job Matching Platform for Saudi Arabia
 
   <p align="center">
+    <a href="https://osos3lom.github.io/jobswipe/"><strong>🚀 تجربة العرض المباشر • Live Demo</strong></a>
+  </p>
+
+  <p align="center">
     <a href="#-العربية"><strong>العربية</strong></a> •
     <a href="#-english"><strong>English</strong></a>
   </p>
 
   <p align="center">
+    <a href="https://osos3lom.github.io/jobswipe/"><img src="https://img.shields.io/badge/Live_Demo-Online-1F7A5C?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Demo" /></a>
     <img src="https://img.shields.io/badge/Next.js_16-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js 16" />
     <img src="https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React 19" />
     <img src="https://img.shields.io/badge/TypeScript_5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript 5" />
@@ -27,6 +32,8 @@
 
 ## 📌 نبذة عن المشروع
 **مساري (Masari)** هو تطبيق ويب تقدمي حديث مصمم خصيصاً لسوق العمل في المملكة العربية السعودية. يعيد التطبيق ابتكار تجربة البحث عن وظائف والتقديم عليها من خلال نظام سحب البطاقات التفاعلي (*Swipe-to-Apply*)، مدعوماً بخوارزمية مطابقة ذكية تقيس مدى توافق مهارات الباحث مع متطلبات الوظائف، مع مدرب مهني ذكي بالذكاء الاصطناعي لتوجيه المسار الوظيفي.
+
+> 🌐 **رابط التجربة المباشرة (Live Demo):** [https://osos3lom.github.io/jobswipe/](https://osos3lom.github.io/jobswipe/)
 
 ---
 
@@ -161,6 +168,8 @@
 
 ## 📌 Project Overview
 **Masari (مساري)** is a modern, mobile-first web application designed specifically for the Saudi Arabian job market. It reimagines job hunting and hiring through an intuitive **swipe-to-apply** mechanism, an intelligent compatibility matching engine, and a built-in AI career coach to help candidates align their skills with market demands.
+
+> 🌐 **Live Demo URL:** [https://osos3lom.github.io/jobswipe/](https://osos3lom.github.io/jobswipe/)
 
 ---
 
