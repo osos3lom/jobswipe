@@ -5,9 +5,36 @@ import { useTheme } from '@/lib/theme'
 import { useI18n } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 
-export function ThemeToggle({ className }: { className?: string }) {
-  const { theme, setTheme } = useTheme()
+export function ThemeToggle({
+  className,
+  compact = false,
+}: {
+  className?: string
+  /** Single icon button, for tight headers like the console topbar. */
+  compact?: boolean
+}) {
+  const { theme, setTheme, toggle } = useTheme()
   const { t } = useI18n()
+
+  if (compact) {
+    return (
+      <button
+        type="button"
+        onClick={toggle}
+        aria-label={t(theme === 'dark' ? 'lightMode' : 'darkMode')}
+        className={cn(
+          'flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground',
+          className,
+        )}
+      >
+        {theme === 'dark' ? (
+          <Sun className="h-4 w-4" />
+        ) : (
+          <Moon className="h-4 w-4" />
+        )}
+      </button>
+    )
+  }
 
   return (
     <div

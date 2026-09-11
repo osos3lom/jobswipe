@@ -8,6 +8,7 @@ import { useStore } from '@/lib/store'
 import { jobs } from '@/lib/data'
 import { rankJobs } from '@/lib/matching'
 import { BottomNav } from '@/components/bottom-nav'
+import { DemoMenu } from '@/components/demo-menu'
 import { LanguageToggle } from '@/components/language-toggle'
 import { Logo } from '@/components/logo'
 import { SwipeDeck, type SwipeDeckHandle } from '@/components/swipe-deck'
@@ -47,7 +48,10 @@ export default function DiscoverPage() {
     <div className="lock-viewport mx-auto flex w-full max-w-md flex-col bg-background">
       <header className="flex items-center justify-between px-4 py-3">
         <Logo />
-        <LanguageToggle />
+        <div className="flex items-center gap-2">
+          <DemoMenu />
+          <LanguageToggle />
+        </div>
       </header>
 
       <main className="flex min-h-0 flex-1 flex-col px-4 pb-28">
@@ -115,7 +119,7 @@ function ActionButton({
 }) {
   const styles = {
     skip: 'h-16 w-16 bg-card text-destructive border border-destructive/20 shadow-lg',
-    undo: 'h-12 w-12 bg-card text-accent-foreground border border-border shadow',
+    undo: 'h-12 w-12 bg-card text-accent border border-border shadow',
     apply: 'h-16 w-16 bg-primary text-primary-foreground shadow-lg shadow-primary/30',
   }[variant]
   return (

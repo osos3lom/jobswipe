@@ -72,7 +72,7 @@ export default function ProfilePage() {
   }
   function reset() {
     resetAll()
-    router.replace('/')
+    router.replace('/jobs')
   }
 
   const salaryLabel = formatSalary(profile.desiredSalary, profile.desiredSalary, lang).split(
@@ -421,7 +421,7 @@ function ChipRow({ items, accent }: { items: string[]; accent?: boolean }) {
           className={cn(
             'rounded-full px-2.5 py-1 text-xs font-medium',
             accent
-              ? 'bg-accent/20 text-accent-foreground'
+              ? 'bg-accent/12 text-accent'
               : 'bg-secondary text-secondary-foreground',
           )}
         >

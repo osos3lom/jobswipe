@@ -1,40 +1,38 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, IBM_Plex_Sans_Arabic } from 'next/font/google'
+import { Geist_Mono, Zain } from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/components/providers'
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
+// Zain is the typeface ihr.sa uses, and it covers both Arabic and Latin.
+const zain = Zain({
+  variable: '--font-zain',
+  subsets: ['arabic', 'latin'],
+  weight: ['400', '700', '800'],
+})
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 })
-const arabic = IBM_Plex_Sans_Arabic({
-  variable: '--font-arabic',
-  subsets: ['arabic'],
-  weight: ['400', '500', '600', '700'],
-})
 
 export const metadata: Metadata = {
-  title: 'Masari — AI Job Matching | مساري',
+  title: 'iHR Platform — HR, payroll & hiring for Saudi companies | concept demo',
   description:
-    'Swipe your way to the right job in Saudi Arabia. AI-matched roles based on your skills, location, salary and career goals. مطابقة وظائف ذكية.',
-  generator: 'v0.app',
+    'Concept demo of an HR platform for Saudi companies: people, payroll, hiring and compliance, plus a swipe-to-apply job app. Unofficial, not affiliated with iHR.',
 }
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#1f7a5c' },
-    { media: '(prefers-color-scheme: dark)', color: '#0e1f1b' },
+    { media: '(prefers-color-scheme: light)', color: '#7a0c0c' },
+    { media: '(prefers-color-scheme: dark)', color: '#140b0c' },
   ],
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 }
 
-// Applies the saved theme before paint so dark mode never flashes.
-const themeScript = `try{if(localStorage.getItem('masari.theme')==='dark'){document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}}catch(e){}`
+// Applies the saved theme and language before paint, so dark mode never
+// flashes and the layout never flips direction after load.
+const bootScript = `try{var d=document.documentElement;if(localStorage.getItem('masari.theme')==='dark'){d.classList.add('dark');d.style.colorScheme='dark'}if(localStorage.getItem('masari.lang')==='en'){d.lang='en';d.dir='ltr'}}catch(e){}`
 
 export default function RootLayout({
   children,
@@ -43,13 +41,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      dir="ltr"
+      lang="ar"
+      dir="rtl"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${arabic.variable} bg-background`}
+      className={`${zain.variable} ${geistMono.variable} bg-background`}
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
       </head>
       <body className="font-sans antialiased">
         <Providers>{children}</Providers>

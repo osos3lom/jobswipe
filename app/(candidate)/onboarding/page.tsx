@@ -95,7 +95,7 @@ export default function OnboardingPage() {
   }
   function back() {
     if (stepIdx > 0) setStepIdx((s) => s - 1)
-    else router.push('/')
+    else router.push('/jobs')
   }
   function skip() {
     // Finish onboarding with whatever has been filled in (defaults are fine).

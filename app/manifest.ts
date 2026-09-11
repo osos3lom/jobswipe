@@ -4,17 +4,16 @@ export const dynamic = 'force-static'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Masari — AI Job Matching',
-    short_name: 'Masari',
+    name: 'iHR Platform — Concept Demo',
+    short_name: 'iHR Platform',
     description:
-      'Swipe your way to the right job in Saudi Arabia. AI-matched roles based on your skills, location, salary and career goals.',
+      'A concept demo of an HR platform for Saudi companies: people, payroll, hiring and compliance, plus a swipe-to-apply job app.',
     start_url: '/',
     display: 'standalone',
-    orientation: 'portrait',
-    background_color: '#f7fbf9',
-    theme_color: '#1f7a5c',
-    lang: 'en',
-    dir: 'auto',
+    background_color: '#fcfafa',
+    theme_color: '#7a0c0c',
+    lang: 'ar',
+    dir: 'rtl',
     categories: ['business', 'productivity'],
     icons: [
       {

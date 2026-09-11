@@ -18,9 +18,6 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   basePath: basePath || undefined,
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
     unoptimized: true,
   },

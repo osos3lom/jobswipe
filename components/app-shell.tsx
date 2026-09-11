@@ -1,6 +1,7 @@
 'use client'
 
 import { BottomNav } from './bottom-nav'
+import { DemoMenu } from './demo-menu'
 import { LanguageToggle } from './language-toggle'
 import { Logo } from './logo'
 
@@ -25,6 +26,7 @@ export function AppShell({
         )}
         <div className="flex items-center gap-2">
           {action}
+          <DemoMenu />
           <LanguageToggle />
         </div>
       </header>

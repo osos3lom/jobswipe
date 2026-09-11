@@ -128,7 +128,7 @@ export default function InterviewsPage() {
                                 'flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium',
                                 isConfirmed
                                   ? 'bg-success/12 text-success'
-                                  : 'bg-accent/20 text-accent-foreground',
+                                  : 'bg-warning/12 text-warning',
                               )}
                             >
                               {isConfirmed && <CheckCircle2 className="h-3 w-3" />}

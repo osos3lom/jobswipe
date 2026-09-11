@@ -271,7 +271,7 @@ function EmptyState({
 }) {
   return (
     <div className="flex flex-col items-center justify-center gap-4 pt-20 text-center">
-      <span className="flex h-20 w-20 items-center justify-center rounded-3xl bg-accent/20 text-accent-foreground">
+      <span className="flex h-20 w-20 items-center justify-center rounded-3xl bg-accent/12 text-accent">
         {icon}
       </span>
       <div>

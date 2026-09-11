@@ -7,12 +7,17 @@ import {
   useMemo,
   useState,
 } from 'react'
+import { hiringDict } from './dict/hiring'
+import { marketingDict } from './dict/marketing'
+import { payrollDict } from './dict/payroll'
+import { peopleDict } from './dict/people'
+import { platformDict } from './dict/platform'
 import type { Lang, LocalizedText } from './types'
 
 type Dict = Record<string, LocalizedText>
 
-const dict: Dict = {
-  appName: { en: 'Masari', ar: 'مساري' },
+const candidateDict: Dict = {
+  appName: { en: 'iHR Jobs', ar: 'وظائف iHR' },
   tagline: {
     en: 'Swipe into your next role',
     ar: 'اسحب نحو وظيفتك القادمة',
@@ -164,15 +169,24 @@ const dict: Dict = {
     en: 'Clears your profile, swipes and chats on this device.',
     ar: 'يمسح ملفك وسحباتك ومحادثاتك على هذا الجهاز.',
   },
-  about: { en: 'About Masari', ar: 'عن مساري' },
+  about: { en: 'About iHR Jobs', ar: 'عن وظائف iHR' },
   aboutText: {
-    en: 'A demo of AI-style job matching for Saudi Arabia. All data stays on your device.',
-    ar: 'عرض توضيحي لمطابقة الوظائف بالذكاء الاصطناعي للسعودية. جميع البيانات محفوظة على جهازك.',
+    en: 'The job-seeker side of the iHR Platform concept demo. All data stays on your device.',
+    ar: 'الجانب الخاص بالباحثين عن عمل من العرض التجريبي لمنصة iHR. جميع البيانات محفوظة على جهازك.',
   },
   // landing
   landingFeature1: { en: 'AI-matched roles', ar: 'وظائف مطابقة بالذكاء' },
   landingFeature2: { en: 'Career coach & goals', ar: 'مدرب مهني وأهداف' },
   landingFeature3: { en: 'Arabic & English', ar: 'عربي وإنجليزي' },
+}
+
+const dict: Dict = { ...candidateDict, ...platformDict, ...marketingDict, ...peopleDict, ...payrollDict, ...hiringDict }
+
+// Fills {placeholders} in a translated string: fill(t('todoPayroll'), { month })
+export function fill(template: string, vars: Record<string, string | number>): string {
+  return template.replace(/\{(\w+)\}/g, (match, key) =>
+    key in vars ? String(vars[key]) : match,
+  )
 }
 
 interface I18nValue {
@@ -189,7 +203,9 @@ const I18nContext = createContext<I18nValue | null>(null)
 const STORAGE_KEY = 'masari.lang'
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('en')
+  // Arabic-first, like ihr.sa. The inline script in the root layout applies a
+  // saved English preference before paint so the direction never flips.
+  const [lang, setLangState] = useState<Lang>('ar')
 
   useEffect(() => {
     const saved = (typeof window !== 'undefined' &&

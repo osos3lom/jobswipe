@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 // Deterministic accent per company name so logos feel distinct without images.
 const palette = [
   'bg-primary/12 text-primary',
-  'bg-accent/20 text-accent-foreground',
+  'bg-accent/12 text-accent',
   'bg-success/15 text-success',
   'bg-chart-4/15 text-chart-4',
   'bg-chart-5/15 text-chart-5',
