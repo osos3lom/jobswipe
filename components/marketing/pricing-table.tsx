@@ -184,7 +184,7 @@ export function PricingTable() {
                   <ul className="mt-6 space-y-3">
                     {tier.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-xs text-foreground">
-                        <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                        <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-success/15 text-success">
                           <Check className="h-3 w-3" />
                         </span>
                         <span>{feature}</span>

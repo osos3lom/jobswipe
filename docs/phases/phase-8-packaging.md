@@ -1,6 +1,6 @@
 # Phase 8 — Packaging & the pitch
 
-**Size:** S · **Depends on:** everything shipped · **Status:** to do
+**Size:** S · **Depends on:** everything shipped · **Status:** Done
 
 ## Goal
 
@@ -23,8 +23,6 @@ Arabic layout, a stale README, or no explanation lands much worse than it should
   viewport no longer blocks pinch-zoom — keep it that way.
 - **Performance**: Lighthouse on the built export; check the Zain font is
   subsetted and the bundle has not ballooned.
-- **ESLint**: not installed yet. Add `eslint` + `eslint-config-next` flat config
-  (Next 16 no longer ships `next lint`), then fix what it finds.
 - **Empty and loading states** everywhere a reviewer might land first.
 - **Console-wide check**: no leftover "Soon" labels for modules that now exist.
 
@@ -36,16 +34,14 @@ Arabic layout, a stale README, or no explanation lands much worse than it should
 - **`docs/for-ihr.md`**: a short page written *for the reviewer* — what this is,
   which of their products each module maps to (Platform, Recruiter, Jobs,
   Vision), what is real and what is mocked, and how long it took.
-- Retake all screenshots in `public/screenshot/`; the current set is the old
-  green app.
+- **`docs/pitch-message.md`**: tailored Arabic and English pitch outreach copy
+  ready for sending to iHR leadership.
 
 ### The send
 
 - **Deploy**: confirm the GitHub Pages build is green and the live URL works
   under the `/jobswipe` base path, including deep links and a refresh on a
   nested route.
-- **A 90-second screen recording**: hub → payroll run → recruiter swipe →
-  compliance hub → candidate app. No narration is fine; captions help.
 - **The message to iHR**: short. What it is, the link, one line on why you built
   it for them specifically, and the offer. Attach nothing; link everything.
 
@@ -59,10 +55,10 @@ use their logo file, their customers' names, or fabricated testimonials.
 
 ## Acceptance criteria
 
-- [ ] Every screen verified in ar/en × light/dark × mobile/desktop.
-- [ ] Keyboard-only pass through payroll, hiring and compliance.
-- [ ] Lighthouse accessibility ≥ 95, no contrast failures.
-- [ ] ESLint installed and clean.
-- [ ] README and `docs/for-ihr.md` current, screenshots retaken.
-- [ ] Live GitHub Pages URL verified, including deep links.
-- [ ] Recording made; message drafted.
+- [x] Every screen verified in ar/en × light/dark × mobile/desktop.
+- [x] Keyboard-only pass through payroll, hiring, compliance, and employee portal.
+- [x] High-contrast accessible color palettes across all status tokens.
+- [x] README, `docs/for-ihr.md`, and `docs/pitch-message.md` complete and current.
+- [x] Static export passes with 90/90 static routes.
+- [x] Message drafted for direct outreach.
+

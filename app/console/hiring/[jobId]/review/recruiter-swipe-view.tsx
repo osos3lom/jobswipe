@@ -129,7 +129,7 @@ export function RecruiterSwipeView({ jobId }: { jobId: string }) {
             <span>{t('backToPipeline')}</span>
           </Link>
           <div className="mt-2 flex items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-rose-500/15 text-rose-600 dark:text-rose-400">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent/15 text-accent">
               <Flame className="h-4 w-4" />
             </span>
             <h1 className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl">
@@ -140,7 +140,7 @@ export function RecruiterSwipeView({ jobId }: { jobId: string }) {
 
         {/* Counter Pills */}
         <div className="flex items-center gap-2 text-xs font-bold">
-          <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-700 dark:text-emerald-400">
+          <span className="rounded-full bg-success/10 px-3 py-1 text-success">
             {stats.shortlisted} {t('shortlistedCount')}
           </span>
           <span className="rounded-full bg-muted px-3 py-1 text-muted-foreground">
@@ -180,7 +180,7 @@ export function RecruiterSwipeView({ jobId }: { jobId: string }) {
         ) : (
           /* Empty State */
           <div className="flex h-[360px] w-full max-w-md flex-col items-center justify-center rounded-3xl border-2 border-dashed border-border bg-card p-8 text-center shadow-sm">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-success/15 text-success">
               <CheckCircle2 className="h-8 w-8" />
             </div>
             <h3 className="mt-4 text-lg font-bold text-foreground">
@@ -218,7 +218,7 @@ export function RecruiterSwipeView({ jobId }: { jobId: string }) {
             <button
               type="button"
               onClick={() => setFlyDirection('pass')}
-              aria-label="Pass on candidate"
+              aria-label={t('ariaPassCandidate')}
               className="group flex h-14 w-14 items-center justify-center rounded-full border-2 border-destructive/40 bg-card text-destructive shadow-md transition-all hover:scale-105 hover:bg-destructive hover:text-white"
             >
               <X className="h-6 w-6" />
@@ -229,7 +229,7 @@ export function RecruiterSwipeView({ jobId }: { jobId: string }) {
               type="button"
               onClick={handleUndo}
               disabled={history.length === 0}
-              aria-label="Undo last swipe"
+              aria-label={t('ariaUndoSwipe')}
               className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-all hover:bg-muted disabled:opacity-40"
             >
               <RotateCcw className="h-4 w-4" />
@@ -239,8 +239,8 @@ export function RecruiterSwipeView({ jobId }: { jobId: string }) {
             <button
               type="button"
               onClick={() => setFlyDirection('shortlist')}
-              aria-label="Shortlist candidate"
-              className="group flex h-14 w-14 items-center justify-center rounded-full border-2 border-emerald-500/40 bg-card text-emerald-600 shadow-md transition-all hover:scale-105 hover:bg-emerald-600 hover:text-white dark:text-emerald-400"
+              aria-label={t('ariaShortlistCandidate')}
+              className="group flex h-14 w-14 items-center justify-center rounded-full border-2 border-success/40 bg-card text-success shadow-md transition-all hover:scale-105 hover:bg-success hover:text-white"
             >
               <Check className="h-6 w-6" />
             </button>
@@ -322,9 +322,9 @@ function RecruiterCardLayer({
             {/* SHORTLIST (Right) */}
             <motion.div
               style={{ opacity: shortlistOpacity }}
-              className="pointer-events-none absolute start-6 top-6 rotate-[-12deg] rounded-2xl border-4 border-emerald-500 bg-emerald-500/10 px-4 py-1 z-50 backdrop-blur-xs"
+              className="pointer-events-none absolute start-6 top-6 rotate-[-12deg] rounded-2xl border-4 border-success bg-success/10 px-4 py-1 z-50 backdrop-blur-xs"
             >
-              <span className="flex items-center gap-1.5 text-2xl font-black uppercase text-emerald-600 dark:text-emerald-400">
+              <span className="flex items-center gap-1.5 text-2xl font-black uppercase text-success">
                 <Check className="h-6 w-6" />
                 {t('swipeShortlist')}
               </span>
@@ -382,8 +382,8 @@ function RecruiterCardLayer({
                 className={cn(
                   'flex items-center gap-2 rounded-xl px-3 py-1.5 text-xs font-semibold',
                   r.positive
-                    ? 'bg-emerald-500/10 text-emerald-800 dark:text-emerald-300'
-                    : 'bg-amber-500/10 text-amber-800 dark:text-amber-300',
+                    ? 'bg-success/10 text-success'
+                    : 'bg-warning/10 text-warning',
                 )}
               >
                 <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
@@ -395,7 +395,7 @@ function RecruiterCardLayer({
           {/* Matched Skills */}
           <div className="mt-4">
             <p className="text-[11px] font-bold text-muted-foreground mb-1.5">
-              Matched Skills:
+              {t('matchedSkills')}:
             </p>
             <div className="flex flex-wrap gap-1">
               {matchedSkills.map((s) => (
@@ -419,7 +419,7 @@ function RecruiterCardLayer({
 
         {/* Card bottom hint */}
         <div className="border-t border-border/70 pt-3 text-center text-[11px] text-muted-foreground">
-          Drag card or use arrow keys to evaluate
+          {t('dragCardHint')}
         </div>
       </div>
     </motion.div>

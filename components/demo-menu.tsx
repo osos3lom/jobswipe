@@ -20,7 +20,11 @@ export function DemoMenu({ className }: { className?: string }) {
   const { resetAll } = useStore()
   const [confirmation, setConfirmation] = useState(false)
 
-  const role = pathname.startsWith('/console') ? 'admin' : 'candidate'
+  const role = pathname.startsWith('/console')
+    ? 'admin'
+    : pathname.startsWith('/me')
+    ? 'employee'
+    : 'candidate'
 
   useEffect(() => {
     if (!confirmation) return
@@ -31,9 +35,27 @@ export function DemoMenu({ className }: { className?: string }) {
   const resetEverything = useCallback(() => {
     resetAll()
     resetHr()
+    try {
+      window.localStorage.removeItem('ihr.tour.status.v1')
+    } catch {
+      // ignore
+    }
     setConfirmation(true)
     router.push('/')
   }, [resetAll, resetHr, router])
+
+  const restartTourAction = useCallback(() => {
+    try {
+      window.localStorage.removeItem('ihr.tour.status.v1')
+    } catch {
+      // ignore
+    }
+    if (pathname !== '/console') {
+      router.push('/console')
+    } else {
+      window.location.reload()
+    }
+  }, [pathname, router])
 
   const itemClass =
     'flex cursor-default select-none items-center gap-2.5 rounded-xl px-2.5 py-2 text-sm outline-none data-[highlighted]:bg-muted data-[disabled]:opacity-50'
@@ -73,14 +95,21 @@ export function DemoMenu({ className }: { className?: string }) {
                   <span className="text-[10px] font-semibold text-primary">●</span>
                 )}
               </Menu.Item>
-              <Menu.Item className={itemClass} disabled>
-                <Wallet className="h-4 w-4" />
+              <Menu.Item
+                className={itemClass}
+                onClick={() => router.push('/me')}
+              >
+                <Wallet className="h-4 w-4 text-primary" />
                 <span className="flex-1">{t('roleEmployee')}</span>
-                <span className="rounded-full bg-muted px-1.5 py-0.5 text-[10px] font-semibold">
-                  {t('comingSoon')}
-                </span>
+                {role === 'employee' && (
+                  <span className="text-[10px] font-semibold text-primary">●</span>
+                )}
               </Menu.Item>
               <Menu.Separator className="my-1.5 h-px bg-border" />
+              <Menu.Item className={itemClass} onClick={restartTourAction}>
+                <RotateCcw className="h-4 w-4 text-muted-foreground" />
+                <span className="flex-1">{t('restartTour')}</span>
+              </Menu.Item>
               <Menu.Item
                 className={cn(itemClass, 'text-destructive')}
                 onClick={resetEverything}

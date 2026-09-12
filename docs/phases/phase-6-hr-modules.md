@@ -1,6 +1,6 @@
 # Phase 6 — Remaining HR modules
 
-**Size:** L · **Depends on:** Phase 2 · **Status:** stretch
+**Size:** L · **Depends on:** Phase 2 · **Status:** Done
 
 ## Goal
 
@@ -60,9 +60,10 @@ Bump the store `KEY` once per shipped module rather than per edit.
 
 ## Acceptance criteria
 
-- [ ] Each shipped module links from `console-nav.ts` and drops its "Soon" label.
-- [ ] Leave balances, EOSB figures and report totals reconcile with the people
+- [x] Each shipped module links from `console-nav.ts` and drops its "Soon" label.
+- [x] Leave balances, EOSB figures and report totals reconcile with the people
       and payroll data.
-- [ ] Every Saudi rule is labelled illustrative on screen.
-- [ ] Charts pass contrast checks in light and dark.
-- [ ] `npm run typecheck && npm run build` pass.
+- [x] Every Saudi rule is labelled illustrative on screen.
+- [x] Charts pass contrast checks in light and dark.
+- [x] `npm run typecheck && npm run build` pass.
+

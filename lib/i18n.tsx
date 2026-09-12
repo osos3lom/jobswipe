@@ -7,11 +7,15 @@ import {
   useMemo,
   useState,
 } from 'react'
+import { complianceDict } from './dict/compliance'
+import { employeeDict } from './dict/employee'
 import { hiringDict } from './dict/hiring'
+import { hrModulesDict } from './dict/hr-modules'
 import { marketingDict } from './dict/marketing'
 import { payrollDict } from './dict/payroll'
 import { peopleDict } from './dict/people'
 import { platformDict } from './dict/platform'
+import { tourDict } from './dict/tour'
 import type { Lang, LocalizedText } from './types'
 
 type Dict = Record<string, LocalizedText>
@@ -180,7 +184,18 @@ const candidateDict: Dict = {
   landingFeature3: { en: 'Arabic & English', ar: 'عربي وإنجليزي' },
 }
 
-const dict: Dict = { ...candidateDict, ...platformDict, ...marketingDict, ...peopleDict, ...payrollDict, ...hiringDict }
+const dict: Dict = {
+  ...candidateDict,
+  ...platformDict,
+  ...marketingDict,
+  ...peopleDict,
+  ...payrollDict,
+  ...hiringDict,
+  ...complianceDict,
+  ...hrModulesDict,
+  ...tourDict,
+  ...employeeDict,
+}
 
 // Fills {placeholders} in a translated string: fill(t('todoPayroll'), { month })
 export function fill(template: string, vars: Record<string, string | number>): string {

@@ -34,7 +34,7 @@ export function Hero() {
           {/* Text & CTAs */}
           <div className="text-center lg:col-span-7 lg:text-start">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
-              <Sparkles className="h-3.5 w-3.5 text-rose-200" />
+              <Sparkles className="h-3.5 w-3.5 text-accent" />
               <span>{t('heroPill')}</span>
             </div>
 
@@ -67,7 +67,7 @@ export function Hero() {
 
             {/* Micro proof pill */}
             <div className="mt-6 flex items-center justify-center gap-2 text-xs text-white/75 lg:justify-start">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span className="h-1.5 w-1.5 rounded-full bg-success" />
               <span>{t('heroTrustPill')}</span>
             </div>
           </div>
@@ -90,7 +90,7 @@ export function Hero() {
                     </p>
                   </div>
                 </div>
-                <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 dark:text-emerald-400">
+                <span className="rounded-full bg-success/15 px-2.5 py-0.5 text-[11px] font-bold text-success">
                   {t('heroMockWpsStatus')}
                 </span>
               </div>
@@ -116,7 +116,7 @@ export function Hero() {
                   <p className="mt-1 text-lg font-extrabold text-foreground">
                     {t('heroMockSaudization')}
                   </p>
-                  <p className="text-[11px] font-medium text-emerald-600 dark:text-emerald-400">
+                  <p className="text-[11px] font-medium text-success">
                     {t('heroMockNitaqatStatus')}
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export function Hero() {
               <div className="mt-4 rounded-2xl border border-primary/20 bg-primary/5 p-3.5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                    <CheckCircle2 className="h-4 w-4 text-success" />
                     <span className="text-xs font-bold text-foreground">
                       GOSI & SIF Bank Export Ready
                     </span>

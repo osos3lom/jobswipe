@@ -158,7 +158,7 @@ function CardLayer({
             {/* APPLY overlay */}
             <motion.div
               style={{ opacity: applyOpacity }}
-              className="pointer-events-none absolute left-5 top-6 rotate-[-12deg] rounded-xl border-4 border-success px-4 py-1.5"
+              className="pointer-events-none absolute start-5 top-6 rotate-[-12deg] rtl:rotate-[12deg] rounded-xl border-4 border-success px-4 py-1.5"
             >
               <span className="flex items-center gap-1 text-2xl font-extrabold uppercase text-success">
                 <Check className="h-6 w-6" />
@@ -168,7 +168,7 @@ function CardLayer({
             {/* SKIP overlay */}
             <motion.div
               style={{ opacity: skipOpacity }}
-              className="pointer-events-none absolute right-5 top-6 rotate-[12deg] rounded-xl border-4 border-destructive px-4 py-1.5"
+              className="pointer-events-none absolute end-5 top-6 rotate-[12deg] rtl:rotate-[-12deg] rounded-xl border-4 border-destructive px-4 py-1.5"
             >
               <span className="flex items-center gap-1 text-2xl font-extrabold uppercase text-destructive">
                 <X className="h-6 w-6" />

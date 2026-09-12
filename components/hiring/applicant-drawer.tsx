@@ -179,8 +179,8 @@ export function ApplicantDrawer({
                 className={cn(
                   'flex items-center gap-2 rounded-xl p-2.5 text-xs font-medium',
                   reason.positive
-                    ? 'bg-emerald-500/10 text-emerald-800 dark:text-emerald-300'
-                    : 'bg-amber-500/10 text-amber-800 dark:text-amber-300',
+                    ? 'bg-success/10 text-success'
+                    : 'bg-warning/10 text-warning',
                 )}
               >
                 <CheckCircle2 className="h-4 w-4 shrink-0" />
@@ -199,7 +199,7 @@ export function ApplicantDrawer({
                 {matchedSkills.map((s) => (
                   <span
                     key={s}
-                    className="rounded-lg bg-emerald-500/15 px-2 py-0.5 text-xs font-bold text-emerald-700 dark:text-emerald-400"
+                    className="rounded-lg bg-success/15 px-2 py-0.5 text-xs font-bold text-success"
                   >
                     ✓ {s}
                   </span>
@@ -260,6 +260,7 @@ export function ApplicantDrawer({
               <button
                 type="submit"
                 disabled={!noteText.trim()}
+                aria-label={t('saveNote')}
                 className="rounded-xl bg-primary px-3.5 py-2 text-xs font-bold text-primary-foreground disabled:opacity-50"
               >
                 <Send className="h-3.5 w-3.5 rtl:-scale-x-100" />
@@ -281,7 +282,7 @@ export function ApplicantDrawer({
               ))
             ) : (
               <p className="text-xs text-muted-foreground italic">
-                No recruiter notes added yet.
+                {t('noNotesYet')}
               </p>
             )}
           </div>
@@ -293,7 +294,7 @@ export function ApplicantDrawer({
             <button
               type="button"
               onClick={() => onInitiateHire(applicant)}
-              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-bold text-white shadow-md hover:bg-emerald-700 transition-colors"
+              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-success px-5 py-3 text-sm font-bold text-white shadow-md hover:bg-success transition-colors"
             >
               <UserCheck className="h-4 w-4" />
               <span>{t('hireCandidate')}</span>

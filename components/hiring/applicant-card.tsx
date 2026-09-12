@@ -85,8 +85,8 @@ export function ApplicantCard({ scored, onSelect, onMoveStage }: Props) {
               className={cn(
                 'h-3.5 w-3.5 shrink-0',
                 topReason.positive
-                  ? 'text-emerald-600 dark:text-emerald-400'
-                  : 'text-amber-600 dark:text-amber-400',
+                  ? 'text-success'
+                  : 'text-warning',
               )}
             />
             <span className="truncate">{tx(topReason.label)}</span>

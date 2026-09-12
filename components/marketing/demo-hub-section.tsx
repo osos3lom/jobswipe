@@ -44,11 +44,12 @@ export function DemoHubSection() {
             active
           />
           <RoleCard
+            href="/me"
             icon={<Wallet className="h-6 w-6" />}
             title={t('roleEmployee')}
             hint={t('roleEmployeeHint')}
-            cta={t('comingSoon')}
-            active={false}
+            cta={t('openDemo')}
+            active
           />
         </div>
       </div>
@@ -78,7 +79,7 @@ function RoleCard({
           {icon}
         </span>
         {active ? (
-          <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 dark:text-emerald-400">
+          <span className="rounded-full bg-success/15 px-2.5 py-0.5 text-[11px] font-bold text-success">
             Interactive
           </span>
         ) : (

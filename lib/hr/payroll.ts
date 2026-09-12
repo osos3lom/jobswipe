@@ -107,9 +107,9 @@ export function calculateMonthlyPayroll(
   employees: Employee[],
   settings: PayrollSettings = DEFAULT_PAYROLL_SETTINGS,
 ) {
-  // All active and onboarding employees receive salary; on_leave can still be configured
-  const eligible = employees.filter((e) => e.status !== 'on_leave')
-  const lines = eligible.map((e) => calculatePayrollLine(e, [], [], settings))
+  // Everyone on the books is paid: annual leave is paid leave under Saudi
+  // labour law, and unpaid leave is entered as a deduction on the run instead.
+  const lines = employees.map((e) => calculatePayrollLine(e, [], [], settings))
   const totals = calculateRunTotals(lines)
   return { lines, totals }
 }

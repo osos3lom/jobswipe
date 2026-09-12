@@ -57,7 +57,7 @@ export default function PayrollRunWizardPage() {
 
   // Included employees: default active and onboarding
   const [includedIds, setIncludedIds] = useState<Set<string>>(() => {
-    return new Set(employees.filter((e) => e.status !== 'on_leave').map((e) => e.id))
+    return new Set(employees.map((e) => e.id))
   })
 
   // Adjustments map: employeeId -> { additions, deductions }
@@ -169,12 +169,12 @@ export default function PayrollRunWizardPage() {
     const firstEmpId = submittedRun.lines[0]?.employeeId || 'e01'
     return (
       <div className="mx-auto max-w-3xl space-y-8 py-8 text-center animate-in fade-in zoom-in-95">
-        <div className="inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+        <div className="inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-success/15 text-success">
           <CheckCircle2 className="h-10 w-10" />
         </div>
 
         <div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-600">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-success/10 px-3 py-1 text-xs font-bold text-success">
             <Sparkles className="h-3.5 w-3.5" />
             {t('payrollSuccessTitle')}
           </span>
@@ -212,7 +212,7 @@ export default function PayrollRunWizardPage() {
         {/* Quick action buttons */}
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
-            href={`/console/payroll/${submittedRun.id}/${firstEmpId}`}
+            href={`/console/payroll/payslip/?run=${submittedRun.id}&emp=${firstEmpId}`}
             className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-md transition-transform hover:scale-105"
           >
             <FileText className="h-4 w-4" />
@@ -361,7 +361,7 @@ export default function PayrollRunWizardPage() {
                               <button
                                 type="button"
                                 onClick={() => handleOpenAddModal(emp, 'addition')}
-                                className="inline-flex items-center gap-1 rounded-xl bg-emerald-500/10 px-2.5 py-1.5 text-xs font-semibold text-emerald-600 hover:bg-emerald-500/20 dark:text-emerald-400"
+                                className="inline-flex items-center gap-1 rounded-xl bg-success/10 px-2.5 py-1.5 text-xs font-semibold text-success hover:bg-success/20"
                               >
                                 <PlusCircle className="h-3.5 w-3.5" />
                                 <span>{t('addAddition')}</span>
@@ -385,7 +385,7 @@ export default function PayrollRunWizardPage() {
                           {empAdj.additions.map((a) => (
                             <span
                               key={a.id}
-                              className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/10 px-2.5 py-1 font-semibold text-emerald-600 dark:text-emerald-400"
+                              className="inline-flex items-center gap-1.5 rounded-xl bg-success/10 px-2.5 py-1 font-semibold text-success"
                             >
                               <span>+ {formatSAR(a.amount, lang)} ({tx(a.label)})</span>
                               <button
@@ -503,7 +503,7 @@ export default function PayrollRunWizardPage() {
 
                 <div className="mt-6 rounded-2xl border border-border/80 bg-background/50 p-4">
                   <div className="flex items-start gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-600">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-success/10 text-success">
                       <FileCheck className="h-5 w-5" />
                     </div>
                     <div>
@@ -705,7 +705,7 @@ export default function PayrollRunWizardPage() {
                   required
                   min="1"
                   step="50"
-                  placeholder="e.g. 1000"
+                  placeholder={t('adjAmountPlaceholder')}
                   value={adjAmount}
                   onChange={(e) => setAdjAmount(e.target.value)}
                   className="mt-1 h-10 w-full rounded-2xl border border-border bg-background px-3 text-sm font-semibold"
@@ -716,7 +716,7 @@ export default function PayrollRunWizardPage() {
                 <label className="text-xs font-semibold text-foreground">{t('adjustmentReason')}</label>
                 <input
                   type="text"
-                  placeholder="e.g. Q3 bonus or 10 hours"
+                  placeholder={t('adjReasonPlaceholder')}
                   value={adjReason}
                   onChange={(e) => setAdjReason(e.target.value)}
                   className="mt-1 h-10 w-full rounded-2xl border border-border bg-background px-3 text-sm"

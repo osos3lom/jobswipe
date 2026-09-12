@@ -92,22 +92,22 @@ export default function PeoplePage() {
     switch (status) {
       case 'active':
         return (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-success/10 px-2.5 py-0.5 text-xs font-semibold text-success">
+            <span className="h-1.5 w-1.5 rounded-full bg-success" />
             {t('statusActive')}
           </span>
         )
       case 'on_leave':
         return (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-600 dark:text-amber-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-warning/10 px-2.5 py-0.5 text-xs font-semibold text-warning">
+            <span className="h-1.5 w-1.5 rounded-full bg-warning" />
             {t('statusOnLeave')}
           </span>
         )
       case 'onboarding':
         return (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-500/10 px-2.5 py-0.5 text-xs font-semibold text-blue-600 dark:text-blue-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-chart-4/10 px-2.5 py-0.5 text-xs font-semibold text-chart-4">
+            <span className="h-1.5 w-1.5 rounded-full bg-chart-4" />
             {t('statusOnboarding')}
           </span>
         )

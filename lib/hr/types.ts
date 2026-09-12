@@ -1,4 +1,6 @@
 import type { ExperienceLevel, LocalizedText } from '@/lib/types'
+export type { ExperienceLevel, LocalizedText }
+
 
 export type DepartmentId = 'exec' | 'hr' | 'finance' | 'sales' | 'ops' | 'it' | 'cs'
 export type Nationality = 'SA' | 'EG' | 'IN' | 'PK' | 'PH' | 'JO' | 'SY'
@@ -26,6 +28,8 @@ export interface Applicant {
   name: LocalizedText
   headline: LocalizedText
   city: WorkCity | 'remote'
+  nationality: Nationality
+  gender: 'male' | 'female'
   skills: string[]
   experience: ExperienceLevel
   expectedSalary: number
@@ -51,6 +55,8 @@ export interface SalaryPackage {
   transport: number
 }
 
+export type ContractStatus = 'authenticated' | 'pending' | 'expired'
+
 export interface Employee {
   id: string
   name: LocalizedText
@@ -65,6 +71,10 @@ export interface Employee {
   status: EmployeeStatus
   salary: SalaryPackage
   iqamaExpiry?: string // ISO date; non-Saudi residents only
+  iban: string // Fictional, non-routable Saudi IBAN
+  passportExpiry?: string // ISO date
+  contractStatus: ContractStatus // Qiwa contract status
+  contractExpiry?: string // ISO date
 }
 
 export interface Company {
@@ -134,4 +144,146 @@ export interface HrState {
   payrollRuns: PayrollRun[]
   payrollSettings: PayrollSettings
   applicants: Applicant[]
+  timeOffRequests: TimeOffRequest[]
+  onboardingTasks: OnboardingTask[]
+  benefits: Record<string, EmployeeBenefit>
+  performanceReviews: PerformanceReview[]
+  ramadanHoursEnabled: boolean
 }
+
+// ---------------- Time Off (Saudi Labor Law) ----------------
+export type LeaveType =
+  | 'annual'
+  | 'sick'
+  | 'maternity'
+  | 'paternity'
+  | 'marriage'
+  | 'bereavement'
+  | 'hajj'
+  | 'unpaid'
+
+export type LeaveRequestStatus = 'pending' | 'approved' | 'rejected'
+
+export interface TimeOffRequest {
+  id: string
+  employeeId: string
+  type: LeaveType
+  startDate: string // ISO date
+  endDate: string // ISO date
+  daysCount: number
+  status: LeaveRequestStatus
+  reason?: string
+  createdAt: string // ISO date
+  reviewedAt?: string
+  reviewedBy?: string
+}
+
+export interface LeaveBalance {
+  type: LeaveType
+  totalDays: number
+  usedDays: number
+  pendingDays: number
+  availableDays: number
+  legalNote?: LocalizedText
+}
+
+// ---------------- Onboarding ----------------
+export type OnboardingCategory = 'hr' | 'it' | 'docs' | 'team'
+
+export interface OnboardingTask {
+  id: string
+  employeeId: string
+  title: LocalizedText
+  description?: LocalizedText
+  category: OnboardingCategory
+  owner: string
+  completed: boolean
+  dueDate: string // ISO date
+  completedAt?: string
+}
+
+export interface OfferLetterTemplate {
+  employeeId: string
+  title: LocalizedText
+  startDate: string
+  basic: number
+  housing: number
+  transport: number
+  signedAt?: string
+  signedBy?: string
+}
+
+// ---------------- Benefits & EOSB (CCHI & Saudi Labor Law) ----------------
+export type InsuranceTier = 'vip' | 'class_a' | 'class_b' | 'class_c'
+
+export interface EmployeeBenefit {
+  employeeId: string
+  insuranceTier: InsuranceTier
+  network: string
+  dependentsCount: number
+  policyNumber: string
+  deductiblePercentage: number
+  maxCoverageLimit: number
+}
+
+export type SeparationReason = 'resignation' | 'contract_expiry' | 'termination' | 'force_majeure'
+
+export interface EosbResult {
+  serviceYears: number
+  serviceMonths: number
+  serviceDays: number
+  totalYearsFraction: number
+  monthlyWage: number // basic + housing
+  tier1Amount: number // first 5 years: 0.5 month per year
+  tier2Amount: number // after 5 years: 1.0 month per year
+  grossEosb: number
+  resignationMultiplier: number // 0, 1/3, 2/3, 1
+  separationReason: SeparationReason
+  netEosb: number
+  isIllustrative: boolean
+}
+
+// ---------------- Performance (OKRs & Competencies) ----------------
+export interface SmartGoal {
+  id: string
+  title: LocalizedText
+  targetMetric: string
+  progress: number // 0 - 100
+  status: 'on_track' | 'at_risk' | 'completed'
+}
+
+export interface PerformanceReview {
+  id: string
+  employeeId: string
+  cycle: string // e.g. 'Q3 2026'
+  rating: number // 1 to 5
+  feedback: string
+  reviewerId: string
+  updatedAt: string
+  goals: SmartGoal[]
+}
+
+// ---------------- Compliance & Nitaqat ----------------
+export type NitaqatBand = 'platinum' | 'high_green' | 'medium_green' | 'low_green' | 'red'
+
+export interface NitaqatThreshold {
+  band: NitaqatBand
+  name: LocalizedText
+  minRate: number
+  maxRate: number
+  color: string
+}
+
+export type DocumentAlertType = 'iqama' | 'passport' | 'contract'
+
+export interface DocumentAlert {
+  id: string
+  employee: Employee
+  type: DocumentAlertType
+  title: LocalizedText
+  documentNumber?: string
+  expiryDate: string
+  daysLeft: number
+  severity: 'destructive' | 'warning' | 'neutral'
+}
+

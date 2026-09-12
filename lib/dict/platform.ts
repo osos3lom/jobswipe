@@ -61,6 +61,10 @@ export const platformDict: Record<string, LocalizedText> = {
   openMenu: { en: 'Open menu', ar: 'فتح القائمة' },
   backToHub: { en: 'Demo hub', ar: 'صفحة العرض' },
   closeMenu: { en: 'Close menu', ar: 'إغلاق القائمة' },
+  pageNotFound: {
+    en: 'The page you are looking for does not exist.',
+    ar: 'الصفحة التي تبحث عنها غير موجودة.',
+  },
   loading: { en: 'Loading…', ar: 'جارٍ التحميل…' },
 
   // dashboard

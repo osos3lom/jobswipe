@@ -100,7 +100,7 @@ export function MarketingFooter() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/60 sm:flex-row">
           <p>{fill(t('footerAllRights'), { author: tx(DEMO_AUTHOR) })}</p>
           <p className="inline-flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="h-2 w-2 rounded-full bg-success animate-pulse" />
             <span>Wadi Al-Noor Trading Co. (25 Active Employees)</span>
           </p>
         </div>

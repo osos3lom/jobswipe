@@ -112,7 +112,7 @@ export function HireDialog({ applicant, open, onClose, onConfirmHire }: Props) {
           </div>
         ) : (
           <div className="text-center py-4">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-success/15 text-success">
               <CheckCircle2 className="h-8 w-8" />
             </div>
 
@@ -121,7 +121,7 @@ export function HireDialog({ applicant, open, onClose, onConfirmHire }: Props) {
             </h3>
 
             <p className="mt-2 text-sm text-muted-foreground">
-              New employee record <span className="font-mono font-bold text-foreground">{hiredEmployee.id}</span> was added to Wadi Al-Noor Trading Co. with status <span className="font-bold text-amber-600 dark:text-amber-400">Onboarding</span>.
+              New employee record <span className="font-mono font-bold text-foreground">{hiredEmployee.id}</span> was added to Wadi Al-Noor Trading Co. with status <span className="font-bold text-warning">Onboarding</span>.
             </p>
 
             <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-center">

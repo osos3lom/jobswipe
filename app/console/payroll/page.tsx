@@ -99,8 +99,8 @@ export default function PayrollPage() {
             <div>
               <div className="flex items-center gap-2.5">
                 <h2 className="text-xl font-bold tracking-tight text-foreground">{monthName}</h2>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-500/10 px-2.5 py-0.5 text-xs font-semibold text-blue-600 dark:text-blue-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-chart-4/10 px-2.5 py-0.5 text-xs font-semibold text-chart-4">
+                  <span className="h-1.5 w-1.5 rounded-full bg-chart-4" />
                   {t('currentPeriod')}
                 </span>
               </div>
@@ -170,13 +170,13 @@ export default function PayrollPage() {
       <div className="rounded-3xl border border-border bg-card p-6 shadow-xs">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-warning/10 text-warning">
               <ShieldCheck className="h-5 w-5" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="text-base font-bold text-foreground">{t('gosiSettingsTitle')}</h3>
-                <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold text-amber-600 dark:text-amber-400">
+                <span className="rounded-full bg-warning/10 px-2 py-0.5 text-[11px] font-semibold text-warning">
                   {t('gosiBadgeIllustrative')}
                 </span>
               </div>
@@ -267,7 +267,7 @@ export default function PayrollPage() {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-bold text-foreground">{runMonth}</h4>
-                        <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-success/10 px-2 py-0.5 text-[11px] font-semibold text-success">
                           <CheckCircle2 className="h-3 w-3" />
                           {t('statusSubmitted')}
                         </span>
@@ -289,7 +289,7 @@ export default function PayrollPage() {
                     </div>
 
                     <Link
-                      href={`/console/payroll/${run.id}/${firstEmployeeId}`}
+                      href={`/console/payroll/payslip/?run=${run.id}&emp=${firstEmployeeId}`}
                       className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-2 text-xs font-semibold text-foreground transition-colors hover:border-primary/40 hover:bg-muted"
                     >
                       <FileText className="h-3.5 w-3.5 text-muted-foreground" />
@@ -373,7 +373,7 @@ export default function PayrollPage() {
               </div>
 
               {savedSuccess && (
-                <div className="flex items-center gap-2 rounded-xl bg-emerald-500/10 p-2.5 text-xs font-semibold text-emerald-600">
+                <div className="flex items-center gap-2 rounded-xl bg-success/10 p-2.5 text-xs font-semibold text-success">
                   <CheckCircle2 className="h-4 w-4" />
                   {t('ratesSavedSuccess')}
                 </div>

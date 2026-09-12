@@ -1,6 +1,6 @@
 # Phase 4 — Saudi compliance hub
 
-**Size:** M · **Depends on:** Phase 2 (for the WPS file) · **Status:** to do
+**Size:** M · **Depends on:** Phase 2 (for the WPS file) · **Status:** Done
 
 ## Goal
 
@@ -61,9 +61,9 @@ would be paying for.
 
 ## Acceptance criteria
 
-- [ ] Saudization percentage matches the dashboard and the people table.
-- [ ] Expiry filters (30/60/90) return the right people; expired sort first.
-- [ ] WPS CSV downloads and opens cleanly in a spreadsheet, Arabic names intact
+- [x] Saudization percentage matches the dashboard and the people table.
+- [x] Expiry filters (30/60/90) return the right people; expired sort first.
+- [x] WPS CSV downloads and opens cleanly in a spreadsheet, Arabic names intact
       (UTF-8 BOM).
-- [ ] Every illustrative rule is labelled on screen, not just in the docs.
-- [ ] `npm run typecheck && npm run build` pass.
+- [x] Every illustrative rule is labelled on screen, not just in the docs.
+- [x] `npm run typecheck && npm run build` pass.

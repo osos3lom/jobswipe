@@ -16,7 +16,7 @@ export default function NotFound() {
       <div>
         <h1 className="text-3xl font-extrabold tracking-tight">404</h1>
         <p className="mt-1 max-w-xs text-sm text-muted-foreground text-pretty">
-          {t('pageNotFound') || 'The page you are looking for does not exist.'}
+          {t('pageNotFound')}
         </p>
       </div>
       <Button

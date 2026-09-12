@@ -12,11 +12,11 @@ Each phase has its own file. Phases 1–5 are the minimum needed to send the dem
 | 1 · Marketing homepage | [phase-1-marketing-site.md](phase-1-marketing-site.md) | **Done** | M |
 | 2 · People & payroll | [phase-2-people-and-payroll.md](phase-2-people-and-payroll.md) | **Done** | L |
 | 3 · Hiring | [phase-3-hiring.md](phase-3-hiring.md) | **Done** | L |
-| 4 · Compliance hub | [phase-4-compliance-hub.md](phase-4-compliance-hub.md) | To do | M |
-| 5 · Guided tour | [phase-5-guided-tour.md](phase-5-guided-tour.md) | To do | S |
-| 6 · Remaining HR modules | [phase-6-hr-modules.md](phase-6-hr-modules.md) | Stretch | L |
-| 7 · Employee self-service | [phase-7-employee-self-service.md](phase-7-employee-self-service.md) | Stretch | M |
-| 8 · Packaging & pitch | [phase-8-packaging.md](phase-8-packaging.md) | To do | S |
+| 4 · Compliance hub | [phase-4-compliance-hub.md](phase-4-compliance-hub.md) | **Done** | M |
+| 5 · Guided tour | [phase-5-guided-tour.md](phase-5-guided-tour.md) | **Done** | S |
+| 6 · Remaining HR modules | [phase-6-hr-modules.md](phase-6-hr-modules.md) | **Done** | L |
+| 7 · Employee self-service | [phase-7-employee-self-service.md](phase-7-employee-self-service.md) | **Done** | M |
+| 8 · Packaging & pitch | [phase-8-packaging.md](phase-8-packaging.md) | **Done** | S |
 
 ## The product, in one line
 

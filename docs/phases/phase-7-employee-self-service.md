@@ -1,6 +1,6 @@
 # Phase 7 — Employee self-service
 
-**Size:** M · **Depends on:** Phases 2 and 6 · **Status:** stretch
+**Size:** M · **Depends on:** Phases 2 and 6 · **Status:** Done
 
 ## Goal
 
@@ -56,10 +56,11 @@ inventing a third shell; give the bottom nav its own items for this role.
 
 ## Acceptance criteria
 
-- [ ] Employee is selectable everywhere it was previously "Soon".
-- [ ] A payslip shown to the employee matches the console's run exactly.
-- [ ] A leave request from `/me` appears in the console queue, and approving it
+- [x] Employee is selectable everywhere it was previously "Soon".
+- [x] A payslip shown to the employee matches the console's run exactly.
+- [x] A leave request from `/me` appears in the console queue, and approving it
       updates the balance on both sides.
-- [ ] Letters render correctly in Arabic and print cleanly.
-- [ ] The assistant never claims to be a live AI model.
-- [ ] `npm run typecheck && npm run build` pass.
+- [x] Letters render correctly in Arabic and print cleanly.
+- [x] The assistant never claims to be a live AI model.
+- [x] `npm run typecheck && npm run build` pass.
+

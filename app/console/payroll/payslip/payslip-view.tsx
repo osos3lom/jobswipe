@@ -90,7 +90,7 @@ export function PayslipView({
         <div className="flex items-center gap-2">
           {prevEmpId && (
             <Link
-              href={`/console/payroll/${runId}/${prevEmpId}`}
+              href={`/console/payroll/payslip/?run=${runId}&emp=${prevEmpId}`}
               className="inline-flex items-center gap-1 rounded-xl border border-border bg-card px-2.5 py-1.5 text-xs font-medium text-foreground hover:bg-muted"
             >
               <ChevronLeft className="h-3.5 w-3.5 rtl:-scale-x-100" />
@@ -100,7 +100,7 @@ export function PayslipView({
 
           <select
             value={employeeId}
-            onChange={(e) => router.push(`/console/payroll/${runId}/${e.target.value}`)}
+            onChange={(e) => router.push(`/console/payroll/payslip/?run=${runId}&emp=${e.target.value}`)}
             aria-label={t('colPerson')}
             className="h-8 rounded-xl border border-border bg-card px-2.5 text-xs font-medium text-foreground focus:outline-hidden"
           >
@@ -117,7 +117,7 @@ export function PayslipView({
 
           {nextEmpId && (
             <Link
-              href={`/console/payroll/${runId}/${nextEmpId}`}
+              href={`/console/payroll/payslip/?run=${runId}&emp=${nextEmpId}`}
               className="inline-flex items-center gap-1 rounded-xl border border-border bg-card px-2.5 py-1.5 text-xs font-medium text-foreground hover:bg-muted"
             >
               <span>{t('next')}</span>
@@ -254,7 +254,7 @@ export function PayslipView({
               </div>
 
               {line.additions.map((adj) => (
-                <div key={adj.id} className="flex justify-between text-emerald-600 print:text-black">
+                <div key={adj.id} className="flex justify-between text-success print:text-black">
                   <span>+ {tx(adj.label)}</span>
                   <span className="font-bold">{formatSAR(adj.amount, lang)}</span>
                 </div>
@@ -343,7 +343,7 @@ export function PayslipView({
         {/* Certification & Security footer */}
         <div className="mt-8 flex flex-col gap-4 border-t border-border/70 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between print:border-black/20 print:text-black/60">
           <div className="flex items-center gap-2.5 text-muted-foreground print:text-black/60">
-            <ShieldCheck className="h-5 w-5 text-emerald-600 print:text-black" />
+            <ShieldCheck className="h-5 w-5 text-success print:text-black" />
             <p className="max-w-md text-[11px] leading-relaxed">
               {t('electronicDocNotice')}
             </p>

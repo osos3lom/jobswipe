@@ -1,6 +1,6 @@
 # Phase 5 — Guided tour
 
-**Size:** S · **Depends on:** Phases 2–4 · **Status:** to do
+**Size:** S · **Depends on:** Phases 2–4 · **Status:** Done
 
 ## Goal
 
@@ -52,8 +52,9 @@ restyling does not silently break the tour.
 
 ## Acceptance criteria
 
-- [ ] A fresh browser profile lands on `/console` and is offered the tour.
-- [ ] All five steps land on the right elements in both languages.
-- [ ] Tour state survives refresh; restart works from the Demo menu.
-- [ ] Dismissing is remembered and never nags again.
-- [ ] `npm run typecheck && npm run build` pass.
+- [x] A fresh browser profile lands on `/console` and is offered the tour.
+- [x] All five steps land on the right elements in both languages.
+- [x] Tour state survives refresh; restart works from the Demo menu.
+- [x] Dismissing is remembered and never nags again.
+- [x] `npm run typecheck && npm run build` pass.
+

@@ -38,6 +38,7 @@ export const hiringDict: Record<string, LocalizedText> = {
   candidateDrawerTitle: { en: 'Candidate Profile', ar: 'ملف المرشح' },
   cvSummary: { en: 'CV & Experience Narrative', ar: 'ملخص السيرة الذاتية والخبرة' },
   recruiterNotes: { en: 'Recruiter Notes & Timeline', ar: 'ملاحظات وتحديثات فريق التوظيف' },
+  noNotesYet: { en: 'No recruiter notes added yet.', ar: 'لا توجد ملاحظات مسجلة بعد.' },
   addNotePlaceholder: { en: 'Write a note about this candidate…', ar: 'اكتب ملاحظة حول تقييم المرشح…' },
   saveNote: { en: 'Post note', ar: 'حفظ الملاحظة' },
   contactInfo: { en: 'Contact information', ar: 'معلومات الاتصال' },
@@ -82,4 +83,8 @@ export const hiringDict: Record<string, LocalizedText> = {
   shortlistedCount: { en: 'Shortlisted', ar: 'مقبولون' },
   passedCount: { en: 'Passed', ar: 'مستبعدون' },
   remainingInDeck: { en: '{count} candidates in deck', ar: '{count} مرشحين متبقين' },
+  ariaPassCandidate: { en: 'Pass on candidate', ar: 'استبعاد المرشح' },
+  ariaUndoSwipe: { en: 'Undo last swipe', ar: 'التراجع عن السحب الأخير' },
+  ariaShortlistCandidate: { en: 'Shortlist candidate', ar: 'قبول مبدئي للمرشح' },
+  dragCardHint: { en: 'Drag card or use arrow keys to evaluate', ar: 'اسحب البطاقة أو استخدم مفاتيح الأسهم للتقييم' },
 }

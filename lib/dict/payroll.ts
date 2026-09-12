@@ -63,6 +63,8 @@ export const payrollDict: Record<string, LocalizedText> = {
   addDeduction: { en: 'Add deduction', ar: 'إضافة حسم' },
   adjustmentAmount: { en: 'Amount (SAR)', ar: 'المبلغ (ريال)' },
   adjustmentReason: { en: 'Description / reason', ar: 'البيان / السبب' },
+  adjAmountPlaceholder: { en: 'e.g. 1000', ar: 'مثال: ١٠٠٠' },
+  adjReasonPlaceholder: { en: 'e.g. Q3 bonus or 10 hours', ar: 'مثال: مكافأة الربع الثالث أو ١٠ ساعات' },
   typeBonus: { en: 'Performance bonus', ar: 'مكافأة أداء' },
   typeOvertime: { en: 'Overtime', ar: 'عمل إضافي' },
   typeAllowance: { en: 'Allowance', ar: 'بدل استثنائي' },

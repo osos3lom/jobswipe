@@ -51,9 +51,9 @@ export function SocialProof() {
         <div className="mt-8 rounded-3xl border border-border bg-background p-8 sm:p-10 shadow-sm relative overflow-hidden">
           <Quote className="absolute -bottom-6 end-6 h-32 w-32 text-muted/30 pointer-events-none" />
 
-          <div className="flex items-center gap-1 text-amber-500 mb-4">
+          <div className="flex items-center gap-1 text-warning mb-4">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-4 w-4 fill-amber-500" />
+              <Star key={i} className="h-4 w-4 fill-warning" />
             ))}
           </div>
 

@@ -16,10 +16,10 @@ import { daysUntil, nextPayday, startOfToday, toISODate } from '@/lib/hr/dates'
 import {
   countByStatus,
   headcountByDepartment,
-  iqamaAlerts,
   saudization,
 } from '@/lib/hr/metrics'
 import { calculateMonthlyPayroll } from '@/lib/hr/payroll'
+import { getDocumentAlerts } from '@/lib/hr/compliance'
 import {
   formatDate,
   formatDays,
@@ -35,11 +35,12 @@ export default function ConsoleDashboard() {
   const { company, employees, payrollRuns, payrollSettings } = useHr()
 
   const admin = employees.find((e) => e.id === company.adminId)
-  const currentProjections = calculateMonthlyPayroll(employees, payrollSettings)
-  const latestRun = payrollRuns[0]
-  const displayPayroll = latestRun ? latestRun.totals.totalNet : currentProjections.totals.totalNet
+  // Gross cost of the run that is coming up, so the figure matches both the
+  // "next payday" hint below it and the total the payroll wizard totals up.
+  const upcomingPayroll = calculateMonthlyPayroll(employees, payrollSettings)
+  const displayPayroll = upcomingPayroll.totals.totalGross
   const saudi = saudization(employees)
-  const alerts = iqamaAlerts(employees)
+  const alerts = getDocumentAlerts(employees, '60')
   const payday = nextPayday(company.payDay)
   const daysToPayday = daysUntil(toISODate(payday))
   const onboarding = employees.filter((e) => e.status === 'onboarding')
@@ -53,7 +54,7 @@ export default function ConsoleDashboard() {
 
   return (
     <div className="mx-auto max-w-6xl">
-      <div className="flex flex-wrap items-start justify-between gap-3">
+      <div className="flex flex-wrap items-start justify-between gap-3" data-tour="dashboard-overview">
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
             {adminFirstName
@@ -91,6 +92,7 @@ export default function ConsoleDashboard() {
           hint={fill(t('kpiPayrollHint'), { date: formatDate(payday, lang) })}
         />
         <Kpi
+          href="/console/compliance"
           icon={<ShieldCheck className="h-4 w-4" />}
           label={t('kpiSaudization')}
           value={formatPercent(saudi.rate, lang)}
@@ -100,7 +102,7 @@ export default function ConsoleDashboard() {
           })}
         />
         <Kpi
-          href="/console/people"
+          href="/console/compliance"
           icon={<CalendarDays className="h-4 w-4" />}
           label={t('kpiDocs')}
           value={formatNumber(alerts.length, lang)}
@@ -117,6 +119,7 @@ export default function ConsoleDashboard() {
           <ul className="mt-3 space-y-2">
             <Todo
               href="/console/payroll/run"
+              dataTour="payroll-cta"
               icon={<Wallet className="h-4 w-4" />}
               tone="neutral"
               title={fill(t('todoPayroll'), {
@@ -130,23 +133,23 @@ export default function ConsoleDashboard() {
                 count: formatNumber(employees.length, lang),
               })}
             />
-            {alerts.slice(0, 3).map(({ employee, daysLeft }) => (
+            {alerts.slice(0, 3).map((alert) => (
               <Todo
-                key={employee.id}
-                href={`/console/people/${employee.id}`}
+                key={alert.id}
+                href={`/console/people/${alert.employee.id}`}
                 icon={<AlertTriangle className="h-4 w-4" />}
-                tone={daysLeft < 0 ? 'danger' : 'warning'}
+                tone={alert.severity === 'destructive' ? 'danger' : alert.severity}
                 title={fill(
                   t(
-                    daysLeft < 0
+                    alert.daysLeft < 0
                       ? 'todoIqamaExpired'
-                      : daysLeft === 0
+                      : alert.daysLeft === 0
                         ? 'todoIqamaToday'
                         : 'todoIqamaExpiring',
                   ),
-                  { name: tx(employee.name), days: formatDays(daysLeft, lang) },
+                  { name: tx(alert.employee.name), days: formatDays(alert.daysLeft, lang) },
                 )}
-                hint={tx(employee.title)}
+                hint={`${tx(alert.title)} · ${tx(alert.employee.title)}`}
               />
             ))}
             {onboarding.map((employee) => (
@@ -254,12 +257,14 @@ function Todo({
   hint,
   tone,
   href,
+  dataTour,
 }: {
   icon: React.ReactNode
   title: string
   hint: string
   tone: 'neutral' | 'warning' | 'danger'
   href?: string
+  dataTour?: string
 }) {
   const content = (
     <>
@@ -284,7 +289,7 @@ function Todo({
 
   if (href) {
     return (
-      <li>
+      <li data-tour={dataTour}>
         <Link
           href={href}
           className="group flex items-start gap-3 rounded-2xl border border-border/70 bg-background/60 px-3 py-2.5 transition-colors hover:border-primary/40 hover:bg-muted/40"
@@ -296,7 +301,7 @@ function Todo({
   }
 
   return (
-    <li className="flex items-start gap-3 rounded-2xl border border-border/70 bg-background/60 px-3 py-2.5">
+    <li data-tour={dataTour} className="flex items-start gap-3 rounded-2xl border border-border/70 bg-background/60 px-3 py-2.5">
       {content}
     </li>
   )

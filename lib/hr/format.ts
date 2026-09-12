@@ -24,18 +24,20 @@ export function formatPercent(rate: number, lang: Lang): string {
 // ar-SA defaults to the Umm al-Qura calendar, so Gregorian dates in Arabic
 // need an explicit -u-ca-gregory.
 export function formatDate(
-  d: Date,
+  d: Date | string,
   lang: Lang,
   opts: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'short', year: 'numeric' },
 ): string {
-  return new Intl.DateTimeFormat(lang === 'ar' ? 'ar-SA-u-ca-gregory' : 'en-GB', opts).format(d)
+  const dateObj = typeof d === 'string' ? new Date(d) : d
+  return new Intl.DateTimeFormat(lang === 'ar' ? 'ar-SA-u-ca-gregory' : 'en-GB', opts).format(dateObj)
 }
 
-export function formatHijri(d: Date, lang: Lang): string {
+export function formatHijri(d: Date | string, lang: Lang): string {
+  const dateObj = typeof d === 'string' ? new Date(d) : d
   return new Intl.DateTimeFormat(
     lang === 'ar' ? 'ar-SA-u-ca-islamic-umalqura' : 'en-US-u-ca-islamic-umalqura',
     { day: 'numeric', month: 'long', year: 'numeric' },
-  ).format(d)
+  ).format(dateObj)
 }
 
 // A day count as it reads after a preposition ("in 12 days" / "خلال ١٢ يومًا").

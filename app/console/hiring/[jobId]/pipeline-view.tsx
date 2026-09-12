@@ -30,11 +30,11 @@ import { cn } from '@/lib/utils'
 import type { Applicant, ApplicantStage, DepartmentId } from '@/lib/hr/types'
 
 const COLUMNS: { stage: ApplicantStage; labelKey: string; color: string }[] = [
-  { stage: 'applied', labelKey: 'stageApplied', color: 'border-blue-500/40 bg-blue-500/5 text-blue-700 dark:text-blue-400' },
-  { stage: 'screening', labelKey: 'stageScreening', color: 'border-amber-500/40 bg-amber-500/5 text-amber-700 dark:text-amber-400' },
-  { stage: 'interview', labelKey: 'stageInterview', color: 'border-purple-500/40 bg-purple-500/5 text-purple-700 dark:text-purple-400' },
-  { stage: 'offer', labelKey: 'stageOffer', color: 'border-rose-500/40 bg-rose-500/5 text-rose-700 dark:text-rose-400' },
-  { stage: 'hired', labelKey: 'stageHired', color: 'border-emerald-500/40 bg-emerald-500/5 text-emerald-700 dark:text-emerald-400' },
+  { stage: 'applied', labelKey: 'stageApplied', color: 'border-chart-4/40 bg-chart-4/5 text-chart-4' },
+  { stage: 'screening', labelKey: 'stageScreening', color: 'border-warning/40 bg-warning/5 text-warning' },
+  { stage: 'interview', labelKey: 'stageInterview', color: 'border-primary/40 bg-primary/5 text-primary' },
+  { stage: 'offer', labelKey: 'stageOffer', color: 'border-accent/40 bg-accent/5 text-accent' },
+  { stage: 'hired', labelKey: 'stageHired', color: 'border-success/40 bg-success/5 text-success' },
   { stage: 'rejected', labelKey: 'stageRejected', color: 'border-border bg-muted/40 text-muted-foreground' },
 ]
 
@@ -151,7 +151,7 @@ export function PipelineView({ jobId }: { jobId: string }) {
               href={`/console/hiring/${jobId}/review`}
               className="inline-flex items-center gap-2 rounded-2xl border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-bold text-primary shadow-xs transition-colors hover:bg-primary/20"
             >
-              <Flame className="h-4 w-4 text-rose-500" />
+              <Flame className="h-4 w-4 text-accent" />
               <span>{t('recruiterSwipe')}</span>
               <span className="rounded-full bg-primary px-1.5 py-0.2 text-[10px] text-primary-foreground">
                 {appliedCount}
