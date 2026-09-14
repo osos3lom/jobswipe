@@ -75,36 +75,38 @@ export function DemoMenu({ className }: { className?: string }) {
         <Menu.Portal>
           <Menu.Positioner className="z-50" sideOffset={8} align="end">
             <Menu.Popup className="min-w-60 rounded-2xl border border-border bg-popover p-1.5 text-popover-foreground shadow-xl outline-none">
-              <Menu.GroupLabel className="px-2.5 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
-                {t('switchRole')}
-              </Menu.GroupLabel>
-              <Menu.Item
-                className={itemClass}
-                onClick={() => router.push('/console')}
-              >
-                <Briefcase className="h-4 w-4 text-primary" />
-                <span className="flex-1">{t('roleAdmin')}</span>
-                {role === 'admin' && (
-                  <span className="text-[10px] font-semibold text-primary">●</span>
-                )}
-              </Menu.Item>
-              <Menu.Item className={itemClass} onClick={() => router.push('/jobs')}>
-                <User className="h-4 w-4 text-primary" />
-                <span className="flex-1">{t('roleCandidate')}</span>
-                {role === 'candidate' && (
-                  <span className="text-[10px] font-semibold text-primary">●</span>
-                )}
-              </Menu.Item>
-              <Menu.Item
-                className={itemClass}
-                onClick={() => router.push('/me')}
-              >
-                <Wallet className="h-4 w-4 text-primary" />
-                <span className="flex-1">{t('roleEmployee')}</span>
-                {role === 'employee' && (
-                  <span className="text-[10px] font-semibold text-primary">●</span>
-                )}
-              </Menu.Item>
+              <Menu.Group>
+                <Menu.GroupLabel className="px-2.5 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                  {t('switchRole')}
+                </Menu.GroupLabel>
+                <Menu.Item
+                  className={itemClass}
+                  onClick={() => router.push('/console')}
+                >
+                  <Briefcase className="h-4 w-4 text-primary" />
+                  <span className="flex-1">{t('roleAdmin')}</span>
+                  {role === 'admin' && (
+                    <span className="text-[10px] font-semibold text-primary">●</span>
+                  )}
+                </Menu.Item>
+                <Menu.Item className={itemClass} onClick={() => router.push('/jobs')}>
+                  <User className="h-4 w-4 text-primary" />
+                  <span className="flex-1">{t('roleCandidate')}</span>
+                  {role === 'candidate' && (
+                    <span className="text-[10px] font-semibold text-primary">●</span>
+                  )}
+                </Menu.Item>
+                <Menu.Item
+                  className={itemClass}
+                  onClick={() => router.push('/me')}
+                >
+                  <Wallet className="h-4 w-4 text-primary" />
+                  <span className="flex-1">{t('roleEmployee')}</span>
+                  {role === 'employee' && (
+                    <span className="text-[10px] font-semibold text-primary">●</span>
+                  )}
+                </Menu.Item>
+              </Menu.Group>
               <Menu.Separator className="my-1.5 h-px bg-border" />
               <Menu.Item className={itemClass} onClick={restartTourAction}>
                 <RotateCcw className="h-4 w-4 text-muted-foreground" />

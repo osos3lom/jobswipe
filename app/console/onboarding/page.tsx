@@ -103,7 +103,7 @@ export default function OnboardingPage() {
             <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               {t('onboardingTitle')}
             </h1>
-            <span className="inline-flex items-center rounded-full bg-blue-500/10 px-2.5 py-0.5 text-xs font-semibold text-blue-600 dark:text-blue-400 border border-blue-500/20">
+            <span className="inline-flex items-center rounded-full bg-chart-4/10 px-2.5 py-0.5 text-xs font-semibold text-chart-4 border border-chart-4/20">
               {t('illustrativeNotice')}
             </span>
           </div>
@@ -189,7 +189,7 @@ export default function OnboardingPage() {
               >
                 <div className="flex items-center justify-between">
                   <div className="font-bold text-foreground">{tx(emp.name)}</div>
-                  <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-xs font-semibold text-blue-600 dark:text-blue-400">
+                  <span className="rounded-full bg-chart-4/10 px-2 py-0.5 text-xs font-semibold text-chart-4">
                     {pct}%
                   </span>
                 </div>
@@ -287,9 +287,9 @@ export default function OnboardingPage() {
                           <span
                             className={cn(
                               'rounded-md px-2 py-0.5 text-[11px] font-medium border uppercase tracking-wide',
-                              task.category === 'docs' && 'bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20',
-                              task.category === 'hr' && 'bg-blue-500/10 text-blue-700 dark:text-blue-300 border-blue-500/20',
-                              task.category === 'it' && 'bg-purple-500/10 text-purple-700 dark:text-purple-300 border-purple-500/20',
+                              task.category === 'docs' && 'bg-warning/10 text-warning border-warning/20',
+                              task.category === 'hr' && 'bg-chart-4/10 text-chart-4 border-chart-4/20',
+                              task.category === 'it' && 'bg-primary/10 text-primary border-primary/20',
                               task.category === 'team' && 'bg-success/10 text-success border-success/20',
                             )}
                           >

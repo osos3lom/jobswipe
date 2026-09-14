@@ -44,12 +44,12 @@ export default function RootLayout({
       lang="ar"
       dir="rtl"
       suppressHydrationWarning
-      className={`${zain.variable} ${geistMono.variable} bg-background`}
+      className={`${zain.variable} ${geistMono.variable} bg-background overflow-x-hidden`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: bootScript }} />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased overflow-x-hidden w-full max-w-full">
         <Providers>{children}</Providers>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

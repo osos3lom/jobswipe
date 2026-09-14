@@ -275,4 +275,209 @@ export const marketingDict: Record<string, LocalizedText> = {
     en: 'Concept demo by {author}. All company and employee identities are fictional.',
     ar: 'عرض تجريبي من إعداد {author}. جميع أسماء الشركات والموظفين خيالية لأغراض العرض.',
   },
+  selectEmployeeCount: { en: 'Select employee count', ar: 'اختر عدد الموظفين' },
+
+  // Apple Design Redesign Micro-copy
+  appleHeroBadge: {
+    en: 'Concept Demo · Vision 2030 Ready',
+    ar: 'عرض تجريبي · برؤية مستقبلية',
+  },
+  appleHeroKicker: {
+    en: 'Saudi HR. Engineered for elegance.',
+    ar: 'الموارد البشرية في المملكة. بهندسة استثنائية.',
+  },
+  appleHeroTitle: {
+    en: 'Simplicity at scale.',
+    ar: 'البساطة، في أبهى صورها.',
+  },
+  appleHeroSubtitle: {
+    en: 'Payroll, compliance, and hiring — unified in a single, fluid experience.',
+    ar: 'الرواتب، والامتثال، والتوظيف — في تجربة انسيابية واحدة.',
+  },
+  appleHeroCtaPrimary: {
+    en: 'Launch Console',
+    ar: 'استكشف المنظومة',
+  },
+  appleHeroCtaSecondary: {
+    en: 'Experience Job App',
+    ar: 'تطبيق الباحثين',
+  },
+  appleStageTabPayroll: {
+    en: '⚡ 1-Click Payroll',
+    ar: '⚡ الرواتب بنقرة واحدة',
+  },
+  appleStageTabNitaqat: {
+    en: '📊 Live Nitaqat',
+    ar: '📊 رادار نطاقات',
+  },
+  appleStageTabSwipe: {
+    en: '✨ Smart Candidate Swipe',
+    ar: '✨ اختيار المرشحين ',
+  },
+  appleStagePayrollBatch: {
+    en: 'May 2026 Batch',
+    ar: 'مسير مايو ٢٠٢٦',
+  },
+  appleStageRunPayroll: {
+    en: 'Process Payroll',
+    ar: 'معالجة المسير الآن',
+  },
+  appleStageRunning: {
+    en: 'Calculating GOSI & WPS SIF…',
+    ar: 'جاري احتساب التأمينات وتوليد SIF…',
+  },
+  appleStageWpsSuccess: {
+    en: '✓ WPS SIF Ready · 100% Compliant',
+    ar: '✓ ملف حماية الأجور جاهز · امتثال ١٠٠٪',
+  },
+  appleStageNitaqatSliderLabel: {
+    en: 'Simulate Saudi Hires',
+    ar: 'محاكاة توظيف كفاءات سعودية',
+  },
+  appleStageNitaqatCurrent: {
+    en: 'Saudization',
+    ar: 'نسبة التوطين',
+  },
+  appleStageNitaqatTier: {
+    en: 'Nitaqat Tier',
+    ar: 'النطاق',
+  },
+  appleStagePlatinum: {
+    en: 'Platinum Tier',
+    ar: 'النطاق البلاتيني',
+  },
+  appleStageHighGreen: {
+    en: 'High Green',
+    ar: 'الأخضر المرتفع',
+  },
+  appleStageSwipeScore: {
+    en: 'AI Match',
+    ar: 'تطابق ذكي',
+  },
+  appleStageSwipeRole: {
+    en: 'Senior Full Stack Engineer',
+    ar: 'مهندس برمجيات أول',
+  },
+  appleStageSwipeAction: {
+    en: 'Drag card right to connect, left to pass',
+    ar: 'اسحب البطاقة يميناً للقبول أو يساراً للتخطي',
+  },
+  appleStageSwipeRouteLink: {
+    en: 'Launch Full Candidate App',
+    ar: 'جرّب تطبيق التوظيف بالسحب كاملاً',
+  },
+  appleStageSwipePass: {
+    en: 'PASS',
+    ar: 'تخطي',
+  },
+  appleStageSwipeLike: {
+    en: 'CONNECT',
+    ar: 'قبول',
+  },
+
+  // Bento
+  appleBentoSectionBadge: {
+    en: 'Engineered for Saudi Arabia',
+    ar: 'هندسة برمجية صُممت للمملكة',
+  },
+  appleBentoHeading: {
+    en: 'Every system. Quietly unified.',
+    ar: 'كل الأنظمة. في تناغم تام.',
+  },
+  appleBentoSubheading: {
+    en: 'GOSI, WPS, Qiwa, and Nitaqat — running silently behind a fluid interface.',
+    ar: 'التأمينات، وحماية الأجور، وقوى، ونطاقات — تعمل بهدوء خلف واجهة نقية وبسيطة.',
+  },
+  appleBentoGosiTitle: {
+    en: 'GOSI on Autopilot',
+    ar: 'التأمينات بانسيابية',
+  },
+  appleBentoGosiDesc: {
+    en: 'Zero manual math. Automatic split for Annuity, SANED, and occupational hazard rates for every Saudi & expat.',
+    ar: 'بلا حسابات يدوية. تقسيم آلي لنسب المعاشات وساند والأخطار المهنية للمواطنين والمقيمين.',
+  },
+  appleBentoWpsTitle: {
+    en: 'WPS SIF in Seconds',
+    ar: 'حماية الأجور بثوانٍ',
+  },
+  appleBentoWpsDesc: {
+    en: 'One-click salary information file generation compliant with Mudad and Saudi central banking standards.',
+    ar: 'توليد فوري لملف صرف الرواتب (SIF) متوافق تماماً مع متطلبات مَدد والبنوك السعودية.',
+  },
+  appleBentoNitaqatTitle: {
+    en: 'Live Nitaqat Radar',
+    ar: 'رادار نطاقات ',
+  },
+  appleBentoNitaqatDesc: {
+    en: 'Real-time tier simulation. See your quota shift before making your next hire.',
+    ar: 'محاكاة فورية لنطاق المنشأة. شاهد التغير في التوطين قبل اتخاذ قرار التوظيف.',
+  },
+  appleBentoIqamaTitle: {
+    en: 'Zero-Penalty Shield',
+    ar: 'درع الإقامات بلا غرامات',
+  },
+  appleBentoIqamaDesc: {
+    en: 'Proactive 90, 60, and 30-day countdown radar so renewals never lapse.',
+    ar: 'رادار تنبيه استباقي ٩٠ و٦٠ و٣٠ يومًا لضمان التجديد في وقته وتفادي الغرامات.',
+  },
+  appleBentoHijriTitle: {
+    en: 'Dual Calendar Harmony',
+    ar: 'تناغم الهجري والميلادي',
+  },
+  appleBentoHijriDesc: {
+    en: 'Umm al-Qura synced seamlessly with Ramadan hours and official Saudi holidays.',
+    ar: 'تقويم أم القرى متوافق مع ساعات العمل في رمضان والعطل الرسمية تلقائيًا.',
+  },
+
+  // Metrics
+  appleMetric1Num: { en: '< 3m', ar: '< ٣د' },
+  appleMetric1Label: { en: 'To run full monthly payroll', ar: 'لإنجاز كامل مسير الرواتب' },
+  appleMetric2Num: { en: '100%', ar: '١٠٠٪' },
+  appleMetric2Label: { en: 'WPS Mudad compliance rate', ar: 'نسبة التوافق مع حماية الأجور' },
+  appleMetric3Num: { en: '0', ar: '٠' },
+  appleMetric3Label: { en: 'Manual GOSI calculations', ar: 'أخطاء أو حسابات يدوية للتأمينات' },
+  appleMetric4Num: { en: '3-in-1', ar: '٣ في ١' },
+  appleMetric4Label: { en: 'Console, Employee Portal & Jobs', ar: 'لوحة المنشأة، بوابة الموظف، والوظائف' },
+
+  // Showcase
+  appleShowcaseBadge: {
+    en: 'Three Worlds. One Platform.',
+    ar: 'ثلاث تجارب. منصة واحدة.',
+  },
+  appleShowcaseHeading: {
+    en: 'Designed for everyone in the company.',
+    ar: 'صُممت لكل فرد في المنشأة.',
+  },
+  appleShowcaseSubheading: {
+    en: 'Switch perspectives instantly. From executive oversight to everyday employee self-service.',
+    ar: 'تنقل بين الأدوار بسلاسة. من التحكم القيادي للمنشأة إلى الخدمة الذاتية وتوظيف الكفاءات.',
+  },
+  appleShowcaseEmployerTab: { en: 'Employer Console', ar: 'لوحة المنشأة' },
+  appleShowcaseEmployeeTab: { en: 'Employee Portal', ar: 'بوابة الموظف' },
+  appleShowcaseCandidateTab: { en: 'Candidate Swipe', ar: 'تطبيق المرشحين' },
+  appleShowcaseEmployerHeadline: {
+    en: 'Total operational control with zero cognitive load.',
+    ar: 'تحكم تشغيلي كامل بلا أي تعقيد.',
+  },
+  appleShowcaseEmployeeHeadline: {
+    en: 'Self-service so natural, it feels like second nature.',
+    ar: 'خدمة ذاتية انسيابية تضع كل احتياجات الموظف بمتناول يده.',
+  },
+  appleShowcaseCandidateHeadline: {
+    en: 'Tinder-inspired speed meets enterprise recruitment.',
+    ar: 'سرعة فائقة في استقطاب الكفاءات والمطابقة الذكية.',
+  },
+  appleShowcaseConsoleDesc: {
+    en: 'Command center for headcount, payroll approvals, GOSI contributions, and compliance health.',
+    ar: 'مركز القيادة لإدارة الكوادر، واعتماد الرواتب، واشتراكات التأمينات، ومؤشرات الامتثال.',
+  },
+  appleShowcaseEmployeeDesc: {
+    en: 'Instant payslip downloads, leave balance tracker, and digital letters on demand.',
+    ar: 'تحميل فوري لكشوف الرواتب، وتتبع رصيد الإجازات، وإصدار الخطابات المعتمدة.',
+  },
+  appleShowcaseCandidateDesc: {
+    en: 'Swipe-based recruitment interface with AI goal alignment and match scoring.',
+    ar: 'تجربة توظيف سريعة تعتمد السحب والمطابقة الذكية لربط أفضل الكفاءات بالشركات.',
+  },
 }
+

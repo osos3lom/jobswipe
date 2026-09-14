@@ -45,7 +45,7 @@ export function HireDialog({ applicant, open, onClose, onConfirmHire }: Props) {
           type="button"
           onClick={handleClose}
           className="absolute end-4 top-4 rounded-xl p-2 text-muted-foreground hover:bg-muted focus:outline-2"
-          aria-label="Close"
+          aria-label={t('close')}
         >
           <X className="h-4 w-4" />
         </button>
@@ -99,7 +99,7 @@ export function HireDialog({ applicant, open, onClose, onConfirmHire }: Props) {
                 onClick={handleClose}
                 className="rounded-xl border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted"
               >
-                Cancel
+                {t('cancel')}
               </button>
               <button
                 type="button"
@@ -121,7 +121,10 @@ export function HireDialog({ applicant, open, onClose, onConfirmHire }: Props) {
             </h3>
 
             <p className="mt-2 text-sm text-muted-foreground">
-              New employee record <span className="font-mono font-bold text-foreground">{hiredEmployee.id}</span> was added to Wadi Al-Noor Trading Co. with status <span className="font-bold text-warning">Onboarding</span>.
+              {fill(t('hireSuccessDetail'), {
+                id: hiredEmployee.id,
+                status: t('statusOnboarding'),
+              })}
             </p>
 
             <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-center">

@@ -142,7 +142,7 @@ export default function EmployeeAssistantPage() {
           <h1 className="text-xl font-bold tracking-tight text-foreground">
             {t('assistantTitle')}
           </h1>
-          <span className="rounded-full bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-bold text-amber-700 dark:text-amber-300 border border-amber-500/20">
+          <span className="rounded-full bg-warning/10 px-2.5 py-0.5 text-[10px] font-bold text-warning border border-warning/20">
             Scripted Demo Assistant
           </span>
         </div>

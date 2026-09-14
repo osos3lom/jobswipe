@@ -122,7 +122,7 @@ export default function PerformancePage() {
             <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               {t('performanceTitle')}
             </h1>
-            <span className="inline-flex items-center rounded-full bg-violet-500/10 px-2.5 py-0.5 text-xs font-semibold text-violet-600 dark:text-violet-400 border border-violet-500/20">
+            <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary border border-primary/20">
               {t('illustrativeNotice')}
             </span>
           </div>
@@ -135,7 +135,7 @@ export default function PerformancePage() {
       {/* Cycle Banner Card */}
       <div className="rounded-2xl border border-border bg-card p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-start gap-3.5">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet-500/10 text-violet-600 dark:text-violet-400">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
             <Target className="h-5 w-5" />
           </div>
           <div>
@@ -164,8 +164,8 @@ export default function PerformancePage() {
           </div>
           <div className="text-center sm:text-start">
             <div className="text-xs text-muted-foreground">{lang === 'ar' ? 'متوسط التقييم' : 'Avg Rating'}</div>
-            <div className="flex items-center gap-1 text-lg font-bold text-amber-500">
-              <Star className="h-4 w-4 fill-amber-500" />
+            <div className="flex items-center gap-1 text-lg font-bold text-warning">
+              <Star className="h-4 w-4 fill-warning" />
               <span>{averageRating}</span>
             </div>
           </div>
@@ -191,8 +191,8 @@ export default function PerformancePage() {
                     <p className="text-xs text-muted-foreground">{tx(emp.title)}</p>
                   </div>
                   {review ? (
-                    <div className="flex items-center gap-1 rounded-lg bg-amber-500/10 px-2.5 py-1 text-xs font-bold text-amber-600 dark:text-amber-400 border border-amber-500/20">
-                      <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                    <div className="flex items-center gap-1 rounded-lg bg-warning/10 px-2.5 py-1 text-xs font-bold text-warning border border-warning/20">
+                      <Star className="h-3.5 w-3.5 fill-warning text-warning" />
                       <span>{review.rating.toFixed(1)}</span>
                     </div>
                   ) : (
@@ -225,8 +225,8 @@ export default function PerformancePage() {
                               goal.progress >= 90
                                 ? 'bg-success'
                                 : goal.progress >= 60
-                                ? 'bg-blue-500'
-                                : 'bg-amber-500',
+                                ? 'bg-chart-4'
+                                : 'bg-warning',
                             )}
                             style={{ width: `${goal.progress}%` }}
                           />
@@ -297,7 +297,7 @@ export default function PerformancePage() {
                   <label className="text-xs font-semibold text-foreground">
                     {t('overallRating')}
                   </label>
-                  <span className="text-sm font-bold text-amber-500">
+                  <span className="text-sm font-bold text-warning">
                     {activeModalReview.review.rating.toFixed(1)} / 5.0
                   </span>
                 </div>

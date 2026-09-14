@@ -14,8 +14,8 @@ export function SocialProof() {
   ]
 
   return (
-    <section id="case-study" className="border-b border-border bg-card py-16 sm:py-24 transition-colors">
-      <div className="mx-auto max-w-6xl px-5">
+    <section id="case-study" className="border-b border-border bg-card py-16 sm:py-24 transition-colors overflow-hidden">
+      <div className="mx-auto max-w-5xl px-5">
         {/* Section Header */}
         <div className="text-center">
           <div className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary">

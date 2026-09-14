@@ -131,7 +131,7 @@ export default function EmployeeHomePage() {
         <div className="flex flex-col justify-between rounded-2xl border border-border bg-card p-4 shadow-xs">
           <div className="flex items-center justify-between text-muted-foreground">
             <span className="text-xs font-semibold">{t('documentExpiryAlert')}</span>
-            <ShieldCheck className="h-4 w-4 text-emerald-500" />
+            <ShieldCheck className="h-4 w-4 text-success" />
           </div>
 
           <div className="my-1.5 space-y-1">
@@ -146,7 +146,7 @@ export default function EmployeeHomePage() {
                     iqamaDaysLeft <= 30
                       ? 'text-destructive'
                       : iqamaDaysLeft <= 60
-                      ? 'text-amber-600 dark:text-amber-400'
+                      ? 'text-warning'
                       : 'text-foreground',
                   )}
                 >
@@ -154,13 +154,13 @@ export default function EmployeeHomePage() {
                 </span>
               </div>
             ) : (
-              <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400">
+              <div className="text-xs font-bold text-success">
                 {lang === 'ar' ? 'مواطن سعودي' : 'Saudi Citizen'}
               </div>
             )}
 
             <div className="text-[11px] text-muted-foreground flex items-center gap-1">
-              <CheckCircle2 className="h-3 w-3 text-emerald-500" />
+              <CheckCircle2 className="h-3 w-3 text-success" />
               <span>{t('contractValidUntil')}</span>
             </div>
           </div>
@@ -183,7 +183,7 @@ export default function EmployeeHomePage() {
             className="flex items-center justify-between rounded-xl border border-border bg-card p-3.5 shadow-xs transition hover:bg-muted/40"
           >
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-success/10 text-success">
                 <Wallet className="h-4 w-4" />
               </div>
               <div>
@@ -201,7 +201,7 @@ export default function EmployeeHomePage() {
             className="flex items-center justify-between rounded-xl border border-border bg-card p-3.5 shadow-xs transition hover:bg-muted/40"
           >
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-chart-4/10 text-chart-4">
                 <CalendarDays className="h-4 w-4" />
               </div>
               <div>
@@ -219,7 +219,7 @@ export default function EmployeeHomePage() {
             className="flex items-center justify-between rounded-xl border border-border bg-card p-3.5 shadow-xs transition hover:bg-muted/40"
           >
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <FileCheck2 className="h-4 w-4" />
               </div>
               <div>
@@ -237,7 +237,7 @@ export default function EmployeeHomePage() {
             className="flex items-center justify-between rounded-xl border border-border bg-card p-3.5 shadow-xs transition hover:bg-muted/40"
           >
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-warning/10 text-warning">
                 <Sparkles className="h-4 w-4" />
               </div>
               <div>

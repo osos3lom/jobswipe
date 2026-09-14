@@ -71,7 +71,7 @@ export function ApplicantCard({ scored, onSelect, onMoveStage }: Props) {
 
           <span
             className="text-muted-foreground/40 group-hover:text-muted-foreground/80 transition-colors"
-            title="Drag to move column"
+            title={t('dragToMove')}
             aria-hidden="true"
           >
             <GripVertical className="h-4 w-4" />

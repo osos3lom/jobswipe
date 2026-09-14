@@ -69,7 +69,7 @@ export function ApplicantDrawer({
           type="button"
           onClick={onClose}
           className="absolute end-4 top-4 rounded-xl p-2 text-muted-foreground hover:bg-muted focus:outline-2"
-          aria-label="Close drawer"
+          aria-label={t('closeDrawer')}
         >
           <X className="h-5 w-5" />
         </button>
@@ -149,7 +149,7 @@ export function ApplicantDrawer({
           <div className="rounded-2xl border border-border p-3">
             <span className="text-muted-foreground flex items-center gap-1.5">
               <MapPin className="h-3.5 w-3.5" />
-              <span>Location</span>
+              <span>{t('locationLabel')}</span>
             </span>
             <p className="mt-1 font-semibold capitalize text-foreground">{applicant.city}</p>
           </div>

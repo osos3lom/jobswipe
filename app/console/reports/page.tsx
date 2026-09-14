@@ -101,13 +101,13 @@ export default function ReportsPage() {
 
   // Color-accessible palette for department visualization
   const DEPT_COLORS: Record<string, { bg: string; text: string; bar: string }> = {
-    exec: { bg: 'bg-indigo-500/10', text: 'text-indigo-600 dark:text-indigo-400', bar: 'bg-indigo-500' },
+    exec: { bg: 'bg-chart-4/10', text: 'text-chart-4', bar: 'bg-chart-4' },
     sales: { bg: 'bg-success/10', text: 'text-success', bar: 'bg-success' },
-    finance: { bg: 'bg-blue-500/10', text: 'text-blue-600 dark:text-blue-400', bar: 'bg-blue-500' },
-    ops: { bg: 'bg-amber-500/10', text: 'text-amber-600 dark:text-amber-400', bar: 'bg-amber-500' },
-    it: { bg: 'bg-purple-500/10', text: 'text-purple-600 dark:text-purple-400', bar: 'bg-purple-500' },
-    hr: { bg: 'bg-rose-500/10', text: 'text-rose-600 dark:text-rose-400', bar: 'bg-rose-500' },
-    cs: { bg: 'bg-teal-500/10', text: 'text-teal-600 dark:text-teal-400', bar: 'bg-teal-500' },
+    finance: { bg: 'bg-chart-4/10', text: 'text-chart-4', bar: 'bg-chart-4' },
+    ops: { bg: 'bg-warning/10', text: 'text-warning', bar: 'bg-warning' },
+    it: { bg: 'bg-primary/10', text: 'text-primary', bar: 'bg-primary' },
+    hr: { bg: 'bg-accent/10', text: 'text-accent', bar: 'bg-accent' },
+    cs: { bg: 'bg-success/10', text: 'text-success', bar: 'bg-success' },
   }
 
   return (
@@ -119,7 +119,7 @@ export default function ReportsPage() {
             <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               {t('reportsTitle')}
             </h1>
-            <span className="inline-flex items-center rounded-full bg-blue-500/10 px-2.5 py-0.5 text-xs font-semibold text-blue-600 dark:text-blue-400 border border-blue-500/20">
+            <span className="inline-flex items-center rounded-full bg-chart-4/10 px-2.5 py-0.5 text-xs font-semibold text-chart-4 border border-chart-4/20">
               {t('illustrativeNotice')}
             </span>
           </div>
@@ -169,7 +169,7 @@ export default function ReportsPage() {
         <div className="rounded-2xl border border-border bg-card p-4 sm:p-5 shadow-xs">
           <div className="flex items-center justify-between text-muted-foreground">
             <span className="text-xs font-medium">{t('currentSaudizationPct')}</span>
-            <ShieldCheck className="h-4 w-4 text-purple-500" />
+            <ShieldCheck className="h-4 w-4 text-primary" />
           </div>
           <div className="mt-2 flex items-baseline gap-2">
             <span className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">

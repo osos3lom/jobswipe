@@ -14,9 +14,9 @@ export default function MarketingLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-background selection:bg-primary/20">
+    <div className="flex min-h-[100dvh] flex-col bg-background selection:bg-primary/20 overflow-x-hidden w-full max-w-full">
       <MarketingHeader />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">{children}</main>
       <MarketingFooter />
     </div>
   )

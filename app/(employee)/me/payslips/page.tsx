@@ -78,7 +78,7 @@ export default function EmployeePayslipsPage() {
                     {lang === 'ar' ? 'تاريخ الصرف:' : 'Pay Date:'} {formatDate(run.payDate, lang)}
                   </span>
                 </div>
-                <span className="rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
+                <span className="rounded-full bg-success/10 px-2.5 py-0.5 text-[11px] font-bold text-success">
                   {t('approved')}
                 </span>
               </div>
@@ -183,7 +183,7 @@ export default function EmployeePayslipsPage() {
                         <span className="font-semibold text-foreground">{formatSAR(line.transport, lang)}</span>
                       </div>
                       {line.additions.map((adj) => (
-                        <div key={adj.id} className="flex justify-between p-2.5 text-emerald-600 dark:text-emerald-400">
+                        <div key={adj.id} className="flex justify-between p-2.5 text-success">
                           <span>{tx(adj.label)}</span>
                           <span className="font-semibold">+{formatSAR(adj.amount, lang)}</span>
                         </div>

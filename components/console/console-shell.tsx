@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu as MenuIcon } from 'lucide-react'
+import { Menu as MenuIcon, Search } from 'lucide-react'
 import { ConsoleSidebar } from './console-sidebar'
 import { DemoMenu } from '@/components/demo-menu'
 import { LanguageToggle } from '@/components/language-toggle'
@@ -70,7 +70,7 @@ export function ConsoleShell({ children }: { children: React.ReactNode }) {
         </AnimatePresence>
 
         <div className="flex min-w-0 flex-1 flex-col">
-          <header className="sticky top-0 z-30 flex items-center gap-2 border-b border-border bg-background/85 px-4 py-2.5 backdrop-blur lg:px-8">
+          <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-border/50 bg-background/80 px-4 py-2.5 backdrop-blur-xl lg:px-8 transition-colors">
             <button
               type="button"
               onClick={() => setDrawerOpen(true)}
@@ -82,6 +82,13 @@ export function ConsoleShell({ children }: { children: React.ReactNode }) {
             <div className="lg:hidden">
               <Logo product="platform" withName={false} />
             </div>
+
+            {/* Apple Quick Search Pill */}
+            <div className="hidden sm:flex items-center gap-2 rounded-full border border-border/70 bg-muted/40 px-3.5 py-1.5 text-xs text-muted-foreground transition-all hover:bg-muted/70 max-w-xs w-full">
+              <Search className="h-3.5 w-3.5 text-muted-foreground/80" />
+              <span className="flex-1 text-[12px]">{t('consoleSearchPlaceholder')}</span>
+            </div>
+
             <div className="flex-1" />
             <div data-tour="role-switch">
               <DemoMenu />

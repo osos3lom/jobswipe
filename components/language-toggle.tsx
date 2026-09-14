@@ -4,7 +4,7 @@ import { useI18n } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 
 export function LanguageToggle({ className }: { className?: string }) {
-  const { lang, setLang } = useI18n()
+  const { lang, setLang, t } = useI18n()
   return (
     <div
       className={cn(
@@ -12,7 +12,7 @@ export function LanguageToggle({ className }: { className?: string }) {
         className,
       )}
       role="group"
-      aria-label="Language"
+      aria-label={t('language')}
     >
       <button
         type="button"

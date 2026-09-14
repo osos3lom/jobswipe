@@ -21,7 +21,7 @@ import {
   useHr,
   useMoveApplicantStage,
 } from '@/lib/hr/store'
-import { useI18n } from '@/lib/i18n'
+import { fill, useI18n } from '@/lib/i18n'
 import { scoreApplicantForJob, type ScoredApplicant } from '@/lib/hr/hiring-matching'
 import { ApplicantCard } from '@/components/hiring/applicant-card'
 import { ApplicantDrawer } from '@/components/hiring/applicant-drawer'
@@ -127,7 +127,7 @@ export function PipelineView({ jobId }: { jobId: string }) {
               <span>{tx(job.city)}</span>
             </span>
             <span>·</span>
-            <span>{scoredApplicants.length} total candidates</span>
+            <span>{fill(t('totalCandidates'), { count: scoredApplicants.length })}</span>
           </div>
         </div>
 

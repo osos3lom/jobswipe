@@ -77,7 +77,7 @@ export default function HiringDashboardPage() {
           <p className="mt-2 text-2xl font-extrabold text-foreground">
             {stats.openPositions}
           </p>
-          <p className="text-[11px] text-muted-foreground">Wadi Al-Noor requisitions</p>
+          <p className="text-[11px] text-muted-foreground">{t('openReqsHint')}</p>
         </div>
 
         <div className="rounded-2xl border border-border bg-card p-4">
@@ -88,19 +88,19 @@ export default function HiringDashboardPage() {
           <p className="mt-2 text-2xl font-extrabold text-foreground">
             {stats.totalApplicants}
           </p>
-          <p className="text-[11px] text-muted-foreground">Synced from candidate app</p>
+          <p className="text-[11px] text-muted-foreground">{t('syncedFromApp')}</p>
         </div>
 
         <div className="rounded-2xl border border-border bg-card p-4">
           <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <Sparkles className="h-4 w-4 text-primary" />
-            <span>In Screening & Interview</span>
+            <span>{t('inScreeningInterview')}</span>
           </span>
           <p className="mt-2 text-2xl font-extrabold text-primary">
             {stats.screeningCount + stats.interviewCount}
           </p>
           <p className="text-[11px] text-muted-foreground">
-            {stats.screeningCount} screening · {stats.interviewCount} interview
+            {fill(t('screeningInterviewSplit'), { screening: stats.screeningCount, interview: stats.interviewCount })}
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export default function HiringDashboardPage() {
           <p className="mt-2 text-2xl font-extrabold text-success">
             {stats.hiredCount}
           </p>
-          <p className="text-[11px] text-muted-foreground">Handed off to onboarding</p>
+          <p className="text-[11px] text-muted-foreground">{t('handedToOnboarding')}</p>
         </div>
       </div>
 

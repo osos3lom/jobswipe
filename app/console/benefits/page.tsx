@@ -145,7 +145,7 @@ export default function BenefitsPage() {
       },
       maxCoverage: 1000000,
       deductible: 0,
-      badgeColor: 'bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20',
+      badgeColor: 'bg-warning/10 text-warning border-warning/20',
     },
     {
       tier: 'class_a',
@@ -156,7 +156,7 @@ export default function BenefitsPage() {
       },
       maxCoverage: 500000,
       deductible: 10,
-      badgeColor: 'bg-purple-500/10 text-purple-700 dark:text-purple-300 border-purple-500/20',
+      badgeColor: 'bg-primary/10 text-primary border-primary/20',
     },
     {
       tier: 'class_b',
@@ -167,7 +167,7 @@ export default function BenefitsPage() {
       },
       maxCoverage: 250000,
       deductible: 20,
-      badgeColor: 'bg-blue-500/10 text-blue-700 dark:text-blue-300 border-blue-500/20',
+      badgeColor: 'bg-chart-4/10 text-chart-4 border-chart-4/20',
     },
     {
       tier: 'class_c',
@@ -367,7 +367,7 @@ export default function BenefitsPage() {
               </div>
 
               {/* Statutory Disclosure Alert */}
-              <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 text-xs text-amber-800 dark:text-amber-300 space-y-1.5">
+              <div className="rounded-2xl border border-warning/20 bg-warning/5 p-4 text-xs text-warning space-y-1.5">
                 <div className="flex items-center gap-1.5 font-bold">
                   <Info className="h-4 w-4 shrink-0" />
                   <span>{lang === 'ar' ? 'سند مواد نظام العمل السعودي' : 'Statutory Articles'}</span>
@@ -413,7 +413,7 @@ export default function BenefitsPage() {
 
                   <div className="rounded-xl bg-muted/40 p-3 col-span-2 sm:col-span-1">
                     <span className="text-xs text-muted-foreground block">{t('article85Multiplier')}:</span>
-                    <span className="text-sm font-bold text-purple-600 dark:text-purple-400">
+                    <span className="text-sm font-bold text-primary">
                       {Math.round(eosbResult.resignationMultiplier * 100)}%
                     </span>
                   </div>
@@ -577,9 +577,9 @@ export default function BenefitsPage() {
                           <span
                             className={cn(
                               'inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold uppercase',
-                              benefit?.insuranceTier === 'vip' && 'bg-amber-500/10 text-amber-700 dark:text-amber-300',
-                              benefit?.insuranceTier === 'class_a' && 'bg-purple-500/10 text-purple-700 dark:text-purple-300',
-                              benefit?.insuranceTier === 'class_b' && 'bg-blue-500/10 text-blue-700 dark:text-blue-300',
+                              benefit?.insuranceTier === 'vip' && 'bg-warning/10 text-warning',
+                              benefit?.insuranceTier === 'class_a' && 'bg-primary/10 text-primary',
+                              benefit?.insuranceTier === 'class_b' && 'bg-chart-4/10 text-chart-4',
                               benefit?.insuranceTier === 'class_c' && 'bg-success/10 text-success',
                             )}
                           >

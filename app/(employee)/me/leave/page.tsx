@@ -102,8 +102,8 @@ export default function EmployeeLeavePage() {
 
       {/* Success alert */}
       {feedbackNotice && (
-        <div className="flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3 text-xs font-medium text-emerald-800 dark:text-emerald-300 animate-in fade-in duration-200">
-          <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+        <div className="flex items-center gap-2 rounded-xl border border-success/30 bg-success/10 p-3 text-xs font-medium text-success animate-in fade-in duration-200">
+          <CheckCircle2 className="h-4 w-4 text-success shrink-0" />
           <span>{feedbackNotice}</span>
         </div>
       )}
@@ -195,8 +195,8 @@ export default function EmployeeLeavePage() {
                   <span
                     className={cn(
                       'rounded-full px-2 py-0.5 text-[10px] font-bold border',
-                      req.status === 'approved' && 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/20',
-                      req.status === 'pending' && 'bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20',
+                      req.status === 'approved' && 'bg-success/10 text-success border-success/20',
+                      req.status === 'pending' && 'bg-warning/10 text-warning border-warning/20',
                       req.status === 'rejected' && 'bg-destructive/10 text-destructive border-destructive/20',
                     )}
                   >

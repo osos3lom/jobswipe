@@ -29,7 +29,7 @@ export function BottomNav() {
 
   return (
     <nav
-      aria-label="Primary"
+      aria-label={t('primaryNav')}
       className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex justify-center pb-[max(env(safe-area-inset-bottom),0.75rem)] px-4"
     >
       <div className="glass-strong pointer-events-auto flex w-full max-w-md items-center justify-between rounded-[28px] px-2 py-2 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.3)]">

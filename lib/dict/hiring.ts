@@ -87,4 +87,20 @@ export const hiringDict: Record<string, LocalizedText> = {
   ariaUndoSwipe: { en: 'Undo last swipe', ar: 'التراجع عن السحب الأخير' },
   ariaShortlistCandidate: { en: 'Shortlist candidate', ar: 'قبول مبدئي للمرشح' },
   dragCardHint: { en: 'Drag card or use arrow keys to evaluate', ar: 'اسحب البطاقة أو استخدم مفاتيح الأسهم للتقييم' },
+  openReqsHint: { en: 'Open requisitions', ar: 'طلبات توظيف مفتوحة' },
+  syncedFromApp: { en: 'Synced from the candidate app', ar: 'مُزامنة من تطبيق الباحثين عن عمل' },
+  handedToOnboarding: { en: 'Handed off to onboarding', ar: 'مُحوَّلون إلى التهيئة' },
+  inScreeningInterview: { en: 'In screening & interview', ar: 'في الفرز والمقابلات' },
+  screeningInterviewSplit: {
+    en: '{screening} screening · {interview} interview',
+    ar: '{screening} فرز · {interview} مقابلة',
+  },
+  dragToMove: { en: 'Drag to move between stages', ar: 'اسحب للنقل بين المراحل' },
+  closeDrawer: { en: 'Close panel', ar: 'إغلاق اللوحة' },
+  locationLabel: { en: 'Location', ar: 'الموقع' },
+  hireSuccessDetail: {
+    en: 'New employee record {id} was created with status {status}.',
+    ar: 'تم إنشاء سجل موظف جديد {id} بحالة {status}.',
+  },
+  totalCandidates: { en: '{count} candidates in total', ar: '{count} مرشح إجمالاً' },
 }

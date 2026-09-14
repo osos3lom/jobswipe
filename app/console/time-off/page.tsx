@@ -173,7 +173,7 @@ export default function TimeOffPage() {
             className={cn(
               'inline-flex items-center justify-center rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition shrink-0',
               ramadanHoursEnabled
-                ? 'bg-amber-500 text-white hover:bg-amber-600 shadow-xs'
+                ? 'bg-warning text-white hover:bg-warning shadow-xs'
                 : 'border border-border bg-background text-foreground hover:bg-muted',
             )}
           >
@@ -210,7 +210,7 @@ export default function TimeOffPage() {
         <div className="rounded-2xl border border-border bg-card p-4 shadow-xs">
           <div className="flex items-center justify-between text-muted-foreground">
             <span className="text-xs font-medium">{lang === 'ar' ? 'في إجازة حالياً' : 'Currently on leave'}</span>
-            <User className="h-4 w-4 text-blue-500" />
+            <User className="h-4 w-4 text-chart-4" />
           </div>
           <div className="mt-2 text-2xl font-bold tracking-tight text-foreground">
             {formatNumber(employeesOnLeaveCount, lang)}
@@ -239,7 +239,7 @@ export default function TimeOffPage() {
         <div className="rounded-2xl border border-border bg-card p-4 shadow-xs">
           <div className="flex items-center justify-between text-muted-foreground">
             <span className="text-xs font-medium">{lang === 'ar' ? 'العطلات القادمة' : 'Public Holidays'}</span>
-            <Calendar className="h-4 w-4 text-violet-500" />
+            <Calendar className="h-4 w-4 text-primary" />
           </div>
           <div className="mt-2 text-2xl font-bold tracking-tight text-foreground">
             {formatNumber(SAUDI_PUBLIC_HOLIDAYS_2026.length, lang)}
@@ -354,8 +354,8 @@ export default function TimeOffPage() {
                               className={cn(
                                 'rounded px-1.5 py-0.5 font-medium',
                                 isSeniorTenure
-                                  ? 'bg-purple-500/10 text-purple-700 dark:text-purple-300'
-                                  : 'bg-blue-500/10 text-blue-700 dark:text-blue-300',
+                                  ? 'bg-primary/10 text-primary'
+                                  : 'bg-chart-4/10 text-chart-4',
                               )}
                             >
                               {isSeniorTenure
@@ -479,8 +479,8 @@ export default function TimeOffPage() {
                           className={cn(
                             'inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium',
                             isSeniorTenure
-                              ? 'bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20'
-                              : 'bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20',
+                              ? 'bg-primary/10 text-primary border border-primary/20'
+                              : 'bg-chart-4/10 text-chart-4 border border-chart-4/20',
                           )}
                         >
                           {isSeniorTenure ? (
